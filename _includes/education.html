@@ -17,7 +17,7 @@
 
   </div><!--//education-container-->
   {% else %}
-  <section class="section educations-section">
+  <section class="section educations-section" >
 
     <h2 class="section-title">
       <span class="fa-stack fa-xs">
@@ -33,15 +33,15 @@
       <div class="meta">
 
         <div class="upper-row">
-          <h3 class="degree">{{ graduation.degree }}</h3>
-          <div class="time">{{ graduation.time }}</div>
+          <h3 class="degree" style="font-family:verdana">{{ graduation.degree }}</h3>
+          <div class="time" style="font-family:verdana">{{ graduation.time }}</div>
         </div><!--//upper-row-->
 
-        <div class="university">{{ graduation.university }}</div>
+        <div class="university" style="font-family:verdana">{{ graduation.university }}</div>
       </div><!--//meta-->
 
       {% if graduation.details %}
-      <div class="details">
+      <div class="details" style="font-family:verdana">
         {{ graduation.details | markdownify }}
       </div><!--//details-->
       {% endif %}

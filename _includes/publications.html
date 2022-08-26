@@ -16,17 +16,38 @@
   </div><!--//intro-->
   {% endif %}
 
-  {% for publication in publications.papers %}
-  <div class="item">
-    {% if publication.link %}
-      <li><a href="{{ publication.link }}">{{ publication.title }}</a></li>
-    {% else %}
-      <li>{{ publication.title }}</li>
-    {% endif %}
-    <div class="publication-authors">{{ publication.authors }}</div>
-    <div class="publication-conference">{{ publication.conference }}</div>
-  </div><!--//item-->
-  {% endfor %}
+  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      {% for publication in publications.papers %}
+      <tr onmouseout="font_stop()" onmouseover="font_start()" bgcolor="">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <img src='{{ publication.image }}' width=160px>
+        </td>
+        <td style="padding:20px;padding-top: 25px;width:75%;vertical-align:top">
+          <a href="{{ publication.link }}"  style="font-family:verdana">
+            <papertitle>{{ publication.title }}</papertitle>
+          </a>
+          <br>
+          {{ publication.conference }}
+          <br>
+          <br>
+          {{ publication.authors }}
+          <br>
+
+          {% if publication.arxiv %}
+              <a href="{{publication.arxiv}}"> <i class="fas fa-link" ,
+                style="color:rgb(50,130,220)"></i> arXiv</a> 
+          {% endif %}
+          
+          {% if publication.code %}
+          <a href="{{publication.code}}"> <i class="fas fa-database"
+              , style="color:rgb(50,130,220)"></i> code</a>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 
 </section><!--//section-->
 {% endif %}
