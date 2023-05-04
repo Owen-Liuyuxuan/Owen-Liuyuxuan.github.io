@@ -56,6 +56,14 @@ education:
 publications:
     title: Publications
     papers:
+      - title: "FSNet: Redesign Self-Supervised MonoDepth for Full-Scale Depth Prediction for Autonomous Driving"
+        image: assets/images/fsnet.png
+        link: "https://sites.google.com/view/fsnet/"
+        arxiv: "https://arxiv.org/abs/2304.10719"
+        authors: <strong>Yuxuan Liu</strong>, Zhenhua Xu, Huaiyang Huang, Lujia Wang, Ming Liu
+        code: https://github.com/Owen-Liuyuxuan/FSNet
+        conference: IEEE Transactions on Automation Science and Engineering, 2023.
+
       - title: Ground-aware Monocular 3D Object Detection for Autonomous Driving
         image: assets/images/gac.png
         link: "https://arxiv.org/abs/2102.00690"
