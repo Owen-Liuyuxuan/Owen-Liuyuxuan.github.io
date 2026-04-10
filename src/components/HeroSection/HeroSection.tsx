@@ -13,32 +13,22 @@ export default function HeroSection() {
       {/* Avatar + Identity */}
       <div
         className="game-card flex flex-col sm:flex-row gap-6 items-start"
-        data-narrator={`${name} — ${nameCN}. ${title}`}
+        data-narrator="That's me — pixelated, but still me."
       >
         {/* Avatar */}
         <div className="flex-shrink-0">
-          <div
-            className="w-32 h-32 rounded-lg border-2 border-cyan-muted shadow-glow-cyan overflow-hidden pixel-render"
-            style={{
-              background: "linear-gradient(135deg, #111827 0%, #0a0e1a 100%)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <span className="font-pixel text-[8px] text-cyan-glow/40 text-center leading-tight px-1">
-              AVATAR
-              <br />
-              <span className="text-[6px] opacity-60">TODO</span>
-            </span>
-          </div>
+          <img
+            src="/assets/sprites/avatar-pixel.png"
+            alt="Yuxuan Liu — pixel avatar"
+            className="w-32 h-32 rounded-lg border-2 border-cyan-muted shadow-glow-cyan pixel-render object-cover"
+          />
         </div>
 
         {/* Identity */}
         <div className="flex-1 min-w-0">
           <h1
             className="font-pixel text-lg text-cyan-glow leading-tight mb-1"
-            data-narrator="Yuxuan Liu — Ph.D. researcher and system engineer."
+            data-narrator="Ph.D. researcher and system engineer. Making autonomous vehicles smarter, one pixel at a time."
           >
             {name}
           </h1>
@@ -80,17 +70,17 @@ export default function HeroSection() {
       {/* About Me */}
       <div
         className="game-card"
-        data-narrator="About me — background and research interests."
+        data-narrator="Ask me anything."
       >
         <h2
           className="font-pixel text-xs text-cyan-glow mb-3"
-          data-narrator="About me section."
+          data-narrator="Ask me anything"
         >
           ABOUT ME
         </h2>
         <p
           className="font-body text-sm text-white-soft/70 leading-relaxed"
-          data-narrator="Ph.D. in ECE at HKUST, supervised by Prof. Ming Liu. Research focuses on 3D perception, depth estimation, and autonomous driving."
+          data-narrator="Ph.D. in ECE at HKUST. Focuses on 3D perception, depth estimation, and autonomous driving."
         >
           {aboutMe}
         </p>
@@ -101,11 +91,11 @@ export default function HeroSection() {
         {/* Education Timeline */}
         <div
           className="game-card"
-          data-narrator="Education history — Ph.D. at HKUST and B.Sc. at ZJU."
+          data-narrator="The journey so far"
         >
           <h2
             className="font-pixel text-xs text-cyan-glow mb-4"
-            data-narrator="Education timeline — Hong Kong University of Science and Technology and Zhejiang University."
+            data-narrator="The journey so far"
           >
             EDUCATION
           </h2>

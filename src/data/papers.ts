@@ -43,11 +43,10 @@ export const PAPERS: Paper[] = [
       { label: "Project", url: "https://sites.google.com/view/fsnet/" },
     ],
     narratorHint:
-      "FSNet — full-scale self-supervised monocular depth. My main depth estimation work.",
+      "FSNet — unsupervised depth estimation from a moving camera. My main squeeze during Ph.D.",
   },
   {
-    title:
-      "Ground-aware Monocular 3D Object Detection for Autonomous Driving",
+    title: "Ground-aware Monocular 3D Object Detection for Autonomous Driving",
     venueShort: "RA-L",
     venueFull: "IEEE Robotics and Automation Letters",
     year: 2021,
@@ -61,11 +60,10 @@ export const PAPERS: Paper[] = [
       { label: "Code", url: "https://github.com/Owen-Liuyuxuan/visualDet3D" },
     ],
     narratorHint:
-      "Ground-aware 3D detection — using ground plane geometry to improve monocular 3D detection.",
+      "Ground plane geometry boosts monocular 3D detection — a neat geometric trick that actually works.",
   },
   {
-    title:
-      "YOLOStereo3D: A Step Back to 2D for Efficient Stereo 3D Detection",
+    title: "YOLOStereo3D: A Step Back to 2D for Efficient Stereo 3D Detection",
     venueShort: "ICRA",
     venueFull:
       "IEEE International Conference on Robotics and Automation",
@@ -78,9 +76,33 @@ export const PAPERS: Paper[] = [
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2103.09422" },
       { label: "Code", url: "https://github.com/Owen-Liuyuxuan/visualDet3D" },
+      { label: "Project", url: "https://arxiv.org/abs/2103.09422" },
     ],
     narratorHint:
-      "YOLOStereo3D — efficient stereo 3D detection by stepping back to 2D representations.",
+      "Still one of the fastest stereo 3D detectors on the KITTI benchmark — sometimes speed is everything.",
+  },
+  {
+    title: "FisheyeDepth: A Real-Scale Self-Supervised Depth Estimation Model for Fisheye Camera",
+    venueShort: "ICRA",
+    venueFull: "IEEE International Conference on Robotics and Automation",
+    year: 2025,
+    authors: [
+      { name: "Guoyang Zhao", isOwner: false },
+      { name: "Yuxuan Liu", isOwner: true },
+      { name: "Weiqing Qi", isOwner: false },
+      { name: "Fulong Ma", isOwner: false },
+      { name: "Ming Liu", isOwner: false },
+      { name: "Jun Ma", isOwner: false },
+    ],
+    links: [
+      {
+        label: "arXiv",
+        url: "https://arxiv.org/abs/2409.15054",
+      },
+      { label: "Code", url: "https://github.com/guoyangzhao/FisheyeDepth" },
+    ],
+    narratorHint:
+      "FisheyeDepth — because most depth models assume pinhole cameras, but fisheye is where the action really is.",
   },
   {
     title:
@@ -101,74 +123,95 @@ export const PAPERS: Paper[] = [
       },
     ],
     narratorHint:
-      "Star-Convolution — a novel convolution operator designed for 3D detection from images.",
+      "A novel convolution operator designed for 3D detection from images — geometry meets deep learning.",
   },
   {
     title:
-      "csBoundary: Container Storage Boundary Detection for Autonomous Driving",
-    venueShort: "TGRS",
-    venueFull: "IEEE Transactions on Geoscience and Remote Sensing",
-    year: 2023,
+      "In Defense of Knowledge Distillation for Task Incremental Learning and its Application in 3D Object Detection",
+    venueShort: "RA-L",
+    venueFull:
+      "IEEE Robotics and Automation Letters",
+    year: 2021,
     authors: [
+      { name: "Peng Yun", isOwner: false },
       { name: "Yuxuan Liu", isOwner: true },
-      { name: "Zhenhua Xu", isOwner: false },
       { name: "Ming Liu", isOwner: false },
     ],
     links: [
-      { label: "arXiv", url: "https://arxiv.org/abs/2302.12345" },
+      {
+        label: "IEEE",
+        url: "https://ieeexplore.ieee.org/document/9359344",
+      },
     ],
     narratorHint:
-      "csBoundary — detecting container storage boundaries from remote sensing data.",
+      "Knowledge distillation helps a 3D detector learn new tasks without forgetting old ones. No catastrophic forgetting here.",
   },
   {
     title:
-      "RNGDet: Road Network Graph Detection from Monocular Imagery",
-    venueShort: "TGRS",
-    venueFull: "IEEE Transactions on Geoscience and Remote Sensing",
-    year: 2022,
-    authors: [
-      { name: "Yuxuan Liu", isOwner: true },
-      { name: "Zhenhua Xu", isOwner: false },
-      { name: "Ming Liu", isOwner: false },
-    ],
-    links: [
-      { label: "arXiv", url: "https://arxiv.org/abs/2205.12345" },
-    ],
-    narratorHint:
-      "RNGDet — extracting road network topology from a single image.",
-  },
-  {
-    title:
-      "ATG-PVD: Automotive Testing Ground Progressive V2X Dataset and Benchmark",
+      "csBoundary: City-Scale Road-Boundary Detection in Aerial Images for High-Definition Maps",
     venueShort: "RA-L",
     venueFull: "IEEE Robotics and Automation Letters",
     year: 2022,
     authors: [
-      { name: "Yuxuan Liu", isOwner: true },
       { name: "Zhenhua Xu", isOwner: false },
+      { name: "Yuxuan Liu", isOwner: true },
+      { name: "Lu Gan", isOwner: false },
+      { name: "Xiangcheng Hu", isOwner: false },
+      { name: "Yuxiang Sun", isOwner: false },
       { name: "Ming Liu", isOwner: false },
+      { name: "Lujia Wang", isOwner: false },
     ],
     links: [
-      { label: "arXiv", url: "https://arxiv.org/abs/2203.12345" },
+      { label: "Project", url: "https://sites.google.com/view/csboundary/" },
+      { label: "arXiv", url: "https://arxiv.org/abs/2111.06020" },
+      { label: "Code", url: "https://github.com/TonyXuQAQ/Topo-boundary" },
     ],
     narratorHint:
-      "ATG-PVD — a large-scale V2X dataset for autonomous driving testing.",
+      "csBoundary — detect road boundaries from aerial images at city scale. HD maps, here we come.",
   },
   {
     title:
-      "In Defense of Pseudo-LiDAR: On 3D Object Detection from Point Clouds and Images",
-    venueShort: "ECCV",
-    venueFull: "European Conference on Computer Vision",
+      "RNGDet: Road Network Graph Detection by Transformer in Aerial Images",
+    venueShort: "TGRS",
+    venueFull: "IEEE Transactions on Geoscience and Remote Sensing",
     year: 2022,
     authors: [
-      { name: "Yuxuan Liu", isOwner: true },
       { name: "Zhenhua Xu", isOwner: false },
+      { name: "Yuxuan Liu", isOwner: true },
+      { name: "Lu Gan", isOwner: false },
+      { name: "Yuxiang Sun", isOwner: false },
+      { name: "Lujia Wang", isOwner: false },
       { name: "Ming Liu", isOwner: false },
     ],
     links: [
-      { label: "arXiv", url: "https://arxiv.org/abs/2207.12345" },
+      { label: "arXiv", url: "https://arxiv.org/abs/2202.07824" },
+      { label: "Code", url: "https://github.com/TonyXuQAQ/Topo-boundary" },
     ],
     narratorHint:
-      "Defending pseudo-LiDAR approaches for image-based 3D detection.",
+      "RNGDet — a Transformer that reads aerial images and draws road networks. Maps on autopilot.",
+  },
+  {
+    title: "ATG-PVD: Ticketing Parking Violations on a Drone",
+    venueShort: "ECCV",
+    venueFull: "European Conference on Computer Vision",
+    year: 2020,
+    authors: [
+      { name: "Hengli Wang", isOwner: false },
+      { name: "Yuxuan Liu", isOwner: true },
+      { name: "Huaiyang Huang", isOwner: false },
+      { name: "Yuheng Pan", isOwner: false },
+      { name: "Wenbin Yu", isOwner: false },
+      { name: "Jialin Jiang", isOwner: false },
+      { name: "Dianbin Lyu", isOwner: false },
+      { name: "Mohammud J Bocus", isOwner: false },
+      { name: "Ming Liu", isOwner: false },
+      { name: "Ioannis Pitas", isOwner: false },
+      { name: "Rui Fan", isOwner: false },
+    ],
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2008.09305" },
+    ],
+    narratorHint:
+      "ATG-PVD — an autonomous drone that hunts for illegal parking. The future of parking enforcement?",
   },
 ];

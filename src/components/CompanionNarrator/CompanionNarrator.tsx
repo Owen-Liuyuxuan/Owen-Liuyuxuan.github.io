@@ -40,6 +40,12 @@ export default function CompanionNarrator({ text }: CompanionNarratorProps) {
           exit={{ opacity: 0, y: 10, scale: 0.95 }}
           transition={{ duration: 0.2 }}
           className="bg-card-dark/95 backdrop-blur-sm border border-cyan-muted rounded-lg px-3 py-2 shadow-glow-cyan"
+          style={{
+            backgroundImage: `url("/assets/sprites/speech-bubble.png")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
         >
           <p className="font-mono text-xs text-white-soft/90 leading-relaxed">
             {displayedText}
@@ -53,29 +59,12 @@ export default function CompanionNarrator({ text }: CompanionNarratorProps) {
         animate={{ y: [0, -3, 0] }}
         transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
       >
-        <AvatarPlaceholder />
+        <img
+          src="/assets/sprites/avatar-pixel.png"
+          alt="Companion"
+          className="w-full h-full pixel-render object-cover"
+        />
       </motion.div>
-    </div>
-  );
-}
-
-function AvatarPlaceholder() {
-  return (
-    <div
-      className="w-full h-full pixel-render"
-      style={{
-        background: "linear-gradient(135deg, #111827 0%, #0a0e1a 100%)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-      title="Avatar placeholder — replace with your pixel sprite"
-    >
-      <span className="font-pixel text-[8px] text-cyan-glow/50 text-center leading-tight px-1">
-        AVATAR
-        <br />
-        <span className="text-[6px] opacity-60">TODO</span>
-      </span>
     </div>
   );
 }

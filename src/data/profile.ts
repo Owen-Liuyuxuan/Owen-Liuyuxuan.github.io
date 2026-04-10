@@ -32,37 +32,34 @@ export const PROFILE: Profile = {
   title: "Ph.D. in ECE · System Engineer @ TIER IV · Tokyo",
   aboutMe:
     "I am Yuxuan Liu (刘宇轩), holding a Ph.D. from the ECE Department of " +
-    "the Hong Kong University of Science and Technology (HKUST), supervised by " +
-    "Prof. Ming Liu. I am now a System Engineer at TIER IV in Tokyo. " +
+    "the Hong Kong University of Science and Technology (HKUST). " +
+    "I am now a System Engineer at TIER IV in Tokyo. " +
     "My research interests lie in image-based 3D perception, monocular depth " +
-    "prediction, autonomous driving, and robotics. During my Ph.D., I participated " +
-    "in deploying the first commercial autonomous logistic vehicle Hercules. " +
-    "In my leisure time, I enjoy language learning — I speak Chinese, English, " +
-    "and Japanese.",
+    "prediction, autonomous driving, and robotics.",
   links: [
     {
       label: "Email",
       url: "mailto:yliuhb@connect.ust.hk",
       icon: "✉️",
-      narratorHint: "Send me an email — I try to reply within a day.",
+      narratorHint: "Shoot me an email — I usually reply within a day. Usually.",
     },
     {
       label: "GitHub",
       url: "https://github.com/Owen-Liuyuxuan",
       icon: "🐙",
-      narratorHint: "My GitHub — 80 repositories and counting.",
+      narratorHint: "Peek at my GitHub — all my open-source toys in one place.",
     },
     {
       label: "Scholar",
       url: "https://scholar.google.com/citations?hl=en&user=G5T6_SQAAAAJ",
       icon: "🎓",
-      narratorHint: "Google Scholar profile — all my publications.",
+      narratorHint: "Google Scholar — published papers and citations. A researcher's trophy shelf.",
     },
     {
       label: "LinkedIn",
       url: "https://linkedin.com/in/yuxuanliu-273a05143",
       icon: "💼",
-      narratorHint: "LinkedIn — professional network.",
+      narratorHint: "Let's connect on LinkedIn!",
     },
     {
       label: "Resume",
@@ -73,18 +70,25 @@ export const PROFILE: Profile = {
   ],
   education: [
     {
-      degree: "Ph.D. in Electronic and Computing Engineering",
+      degree: "Ph.D. in Electronic and Computer Engineering",
       school: "Hong Kong University of Science and Technology",
       period: "2019 – 2024",
       narratorHint:
-        "Developed autonomous driving algorithms under Prof. Ming Liu at RAM-LAB.",
+        "Ph.D. at HKUST ECE — developing autonomous driving algorithms at RAM-LAB. The grind was real.",
     },
     {
       degree: "B.Sc. in Mechatronics",
       school: "Zhejiang University",
       period: "2015 – 2019",
       narratorHint:
-        "Undergraduate at ZJU — where my journey in robotics began.",
+        "ZJU undergrad — where the robotics obsession started and never really ended.",
+    },
+    {
+      degree: "System Engineer",
+      school: "TIER IV",
+      period: "2023 – Present",
+      narratorHint:
+        "System Engineer at TIER IV in Tokyo — building the future of autonomous driving with Autoware.",
     },
   ],
 };

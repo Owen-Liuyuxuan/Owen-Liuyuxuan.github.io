@@ -11,7 +11,7 @@ const FIELD_LINKS = [
     url: "https://owen-liuyuxuan.github.io/papers_reading_sharing.github.io/",
     emoji: "📖",
     narratorHint:
-      "My paper reading blog — detailed notes on papers in computer vision and autonomous driving.",
+      "My paper reading blog — community notes on CV, autonomous driving, and AI papers. Join the discussion!",
   },
   {
     title: "FSNet Project Page",
@@ -20,7 +20,7 @@ const FIELD_LINKS = [
     url: "https://sites.google.com/view/fsnet/",
     emoji: "🌐",
     narratorHint:
-      "FSNet project page — view demos and video results of our full-scale depth estimation method.",
+      "FSNet demos and video results — watch full-scale depth estimation in action.",
   },
   {
     title: "Hercules Autonomous Vehicle",
@@ -29,7 +29,7 @@ const FIELD_LINKS = [
     url: "https://www.youtube.com/watch?v=ggyQgRe9cds",
     emoji: "🚛",
     narratorHint:
-      "Hercules — the autonomous logistic vehicle I helped deploy during my Ph.D. research.",
+      "Hercules, the first commercial autonomous logistics vehicle — I helped deploy it during my Ph.D.!",
   },
   {
     title: "ArXiv Word Cloud",
@@ -38,7 +38,7 @@ const FIELD_LINKS = [
     url: "https://github.com/Owen-Liuyuxuan/arxiv_word_cloud",
     emoji: "☁️",
     narratorHint:
-      "ArXiv word cloud — see which topics and keywords dominate my daily paper reading.",
+      "ArXiv word cloud — see what topics are dominating my daily reading habit.",
   },
 ];
 
@@ -47,7 +47,7 @@ export default function FieldLog() {
     <section>
       <h2
         className="font-pixel text-sm text-cyan-glow mb-6"
-        data-narrator="Field log — external projects, blogs, and resources. Links to my work beyond this portfolio."
+        data-narrator="Field log — a collection of projects and resources outside the main site. Check them out!"
       >
         🗺️ FIELD LOG — EXTERNAL LINKS
       </h2>

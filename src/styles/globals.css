@@ -31,6 +31,23 @@
            border border-cyan-muted rounded-lg
            px-4 py-4
            transition-all duration-300 ease-out;
+    background-image: url("/assets/textures/card-noise.png");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+    background-blend-mode: overlay;
+  }
+  .game-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 212, 255, 0.04) 0%,
+      transparent 50%,
+      rgba(138, 43, 226, 0.03) 100%
+    );
+    pointer-events: none;
   }
   .game-card:hover {
     @apply border-cyan-glow/50;

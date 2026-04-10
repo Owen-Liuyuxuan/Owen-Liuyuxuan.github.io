@@ -14,6 +14,38 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+function autoGenerateIntelHint(item) {
+  if (!item.summary) return "";
+
+  const clean = item.summary
+    .replace(/\*\*/g, "")
+    .replace(/\*/g, "")
+    .replace(/`/g, "")
+    .replace(/#{1,6}\s/g, "")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/\n/g, " ")
+    .trim();
+
+  // Extract the key insight — method, dataset, or metric
+  const patterns = [
+    /(?:we propose|introduces?|presents?|proposes?)\s+([^.]+)/i,
+    /(?:uses?|employs?|leverages?|adopts?|combines?|integrates?)\s+([^.]+)/i,
+    /(?:based on|built on|trained on|evaluated on)\s+([^.]+)/i,
+  ];
+
+  for (const re of patterns) {
+    const match = clean.match(re);
+    if (match?.[1]?.length > 15) {
+      const snippet = match[1].trim().slice(0, 80);
+      return snippet.endsWith(".") ? snippet : snippet + ".";
+    }
+  }
+
+  const firstSentence = clean.match(/[^.]+/)?.[0]?.trim() ?? clean.slice(0, 80);
+  const trimmed = firstSentence.slice(0, 80);
+  return trimmed.endsWith(".") ? trimmed : trimmed + ".";
+}
+
 function enrichRepos() {
   const path = resolve(__dirname, "../src/data/repos.json");
   let repos;
@@ -54,10 +86,7 @@ function enrichIntelFeed() {
   let enriched = 0;
   for (const item of items) {
     if (!item.narratorHint || item.narratorHint.trim() === "") {
-      const hint = item.summary
-        ? `${item.title} — ${item.summary.slice(0, 120)}${item.summary.length > 120 ? "..." : ""}`
-        : item.title;
-      item.narratorHint = hint;
+      item.narratorHint = autoGenerateIntelHint(item);
       enriched++;
     }
   }

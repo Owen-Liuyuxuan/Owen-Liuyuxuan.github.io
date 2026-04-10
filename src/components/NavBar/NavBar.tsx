@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export type TabId = "home" | "quests" | "arsenal" | "intel" | "fieldlog";
 
@@ -10,19 +11,27 @@ interface NavBarProps {
   onTabChange: (tab: TabId) => void;
 }
 
-const TABS: { id: TabId; emoji: string; label: string }[] = [
-  { id: "home",     emoji: "🏠", label: "BASE" },
-  { id: "quests",   emoji: "📜", label: "QUESTS" },
-  { id: "arsenal",  emoji: "🛠️", label: "ARSENAL" },
-  { id: "intel",   emoji: "📡", label: "INTEL" },
-  { id: "fieldlog", emoji: "🗺️", label: "FIELD LOG" },
+const ICON_PATHS: Record<TabId, string> = {
+  home:     "/assets/sprites/icon-home.png",
+  quests:   "/assets/sprites/icon-quests.png",
+  arsenal:  "/assets/sprites/icon-arsenal.png",
+  intel:    "/assets/sprites/icon-intel.png",
+  fieldlog: "/assets/sprites/icon-fieldlog.png",
+};
+
+const TABS: { id: TabId; label: string }[] = [
+  { id: "home",     label: "BASE" },
+  { id: "quests",   label: "QUESTS" },
+  { id: "arsenal",  label: "ARSENAL" },
+  { id: "intel",   label: "INTEL" },
+  { id: "fieldlog", label: "FIELD LOG" },
 ];
 
 export default function NavBar({ activeTab, onTabChange }: NavBarProps) {
   return (
     <nav
       className="sticky top-0 z-40 bg-card-dark/80 backdrop-blur-md border-b border-cyan-muted"
-      data-narrator="Navigation — choose a section to explore."
+      data-narrator="Where is the next stop?"
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center h-12 gap-1 overflow-x-auto scrollbar-thin">
@@ -41,9 +50,17 @@ export default function NavBar({ activeTab, onTabChange }: NavBarProps) {
                     : "text-white-soft/50 hover:text-white-soft"
                   }
                 `}
-                data-narrator={`Switch to ${tab.label} — ${getTabNarrator(tab.id)}`}
+                data-narrator={`${getTabNarrator(tab.id)}`}
               >
-                <span className="text-sm">{tab.emoji}</span>
+                <span className="w-5 h-5 relative flex-shrink-0 pixel-render">
+                  <Image
+                    src={ICON_PATHS[tab.id]}
+                    alt={tab.label}
+                    fill
+                    sizes="20px"
+                    className="object-contain"
+                  />
+                </span>
                 <span className="hidden sm:inline">{tab.label}</span>
                 {isActive && (
                   <motion.div
@@ -64,11 +81,11 @@ export default function NavBar({ activeTab, onTabChange }: NavBarProps) {
 
 function getTabNarrator(tabId: TabId): string {
   const hints: Record<TabId, string> = {
-    home: "Your home base — bio, education, and skills.",
-    quests: "Published papers — completed research quests.",
-    arsenal: "GitHub repositories — your tool inventory.",
-    intel: "Daily AI intel feed — latest papers and news.",
-    fieldlog: "External projects and links — field notes.",
+    home: "Home, sweet home",
+    quests: "Paper quests. Are you still reading papers?",
+    arsenal: "Tool inventories. Let's coding",
+    intel: "Daily AI intel feed. One paper a day, keep the Dr. away!",
+    fieldlog: "External field links. What you gonna checkout next?",
   };
   return hints[tabId];
 }

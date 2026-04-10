@@ -22,12 +22,12 @@ const bodyFont = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Yuxuan Liu — Pixel Lab",
+  title: "Yuxuan Liu",
   description:
     "Personal portfolio of Yuxuan Liu (刘宇轩) — AI/Robotics researcher, " +
     "System Engineer at TIER IV. Publications, open-source projects, and daily AI intel.",
   openGraph: {
-    title: "Yuxuan Liu — Pixel Lab",
+    title: "Yuxuan Liu",
     description: "AI/Robotics researcher & engineer. Publications, projects, and more.",
     url: "https://owen-liuyuxuan.github.io",
     siteName: "Pixel Lab",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Yuxuan Liu — Pixel Lab",
+    title: "Yuxuan Liu — RAM-LAB",
     description: "AI/Robotics researcher & engineer.",
   },
   icons: {

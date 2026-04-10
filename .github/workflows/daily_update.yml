@@ -34,18 +34,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Fetch GitHub repos data
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run fetch:repos
-
-      - name: Fetch intel feed data
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run fetch:intel
-
-      - name: Generate narrator texts (for dynamic content)
-        run: npm run generate:narrator
+      - name: Fetch data & rebuild (prebuild:ci)
+        run: npm run prebuild:ci
 
       - name: Build Next.js static site
         run: npm run build

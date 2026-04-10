@@ -38,7 +38,7 @@ export default function HomePage() {
   };
 
   const { narratorText, handleMouseOver } = useNarrator(
-    "Welcome, traveler. Hover over anything to learn more about my work..."
+    "Welcome, trailblazer. Hover over anything to learn more about me..."
   );
 
   return (

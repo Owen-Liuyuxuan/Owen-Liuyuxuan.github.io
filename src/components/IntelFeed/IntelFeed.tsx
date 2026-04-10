@@ -27,7 +27,7 @@ export default function IntelFeed() {
     <section>
       <div className="flex items-center gap-3 mb-6">
         <h2 className="font-pixel text-sm text-cyan-glow"
-          data-narrator="Daily AI intelligence feed — latest papers, blog posts, and news in AI and robotics. Auto-updated daily.">
+          data-narrator="Daily AI intelligence feed from Arxiv">
           📡 INTEL FEED
         </h2>
         <span

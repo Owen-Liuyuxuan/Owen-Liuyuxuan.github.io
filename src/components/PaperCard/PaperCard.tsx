@@ -31,7 +31,6 @@ function QuestCard({ paper, index }: { paper: Paper; index: number }) {
       {/* Venue badge */}
       <span
         className={`inline-block text-[10px] font-pixel px-2 py-0.5 rounded border mb-2 ${venueStyle}`}
-        data-narrator={`Published at ${paper.venueShort} in ${paper.year}.`}
       >
         {paper.venueShort} {paper.year}
       </span>
@@ -39,16 +38,12 @@ function QuestCard({ paper, index }: { paper: Paper; index: number }) {
       {/* Title */}
       <h3
         className="font-mono text-sm font-semibold text-white-soft leading-snug mb-2 pr-12"
-        data-narrator={paper.title}
       >
         {paper.title}
       </h3>
 
       {/* Authors */}
-      <p
-        className="font-body text-xs text-white-soft/50 mb-3"
-        data-narrator="Authors of this paper."
-      >
+      <p className="font-body text-xs text-white-soft/50 mb-3">
         {paper.authors.map((a, i) => (
           <span key={i}>
             {i > 0 && ", "}
@@ -60,7 +55,7 @@ function QuestCard({ paper, index }: { paper: Paper; index: number }) {
       </p>
 
       {/* Action links */}
-      <div className="flex gap-2 flex-wrap" data-narrator="Paper links — arXiv, code, and project page.">
+      <div className="flex gap-2 flex-wrap" data-narrator="Tap to open the paper links.">
         {paper.links.map((link) => (
           <a
             key={link.label}
@@ -68,7 +63,7 @@ function QuestCard({ paper, index }: { paper: Paper; index: number }) {
             target="_blank"
             rel="noopener noreferrer"
             className="tag-pill hover:bg-cyan-glow/20 transition-colors"
-            data-narrator={`Open ${link.label} for this paper.`}
+            data-narrator={`Open ${link.label}.`}
           >
             {link.label}
           </a>
@@ -82,7 +77,7 @@ export default function PaperCard() {
   return (
     <section>
       <h2 className="font-pixel text-sm text-cyan-glow mb-6"
-        data-narrator="Publications — 8 papers published at top venues including T-ASE, RA-L, ICRA, TGRS, and ECCV.">
+        data-narrator="Publications — memories from my school days. Click to explore each paper.">
         📜 QUESTS — PUBLICATIONS
       </h2>
       <div className="grid gap-4 md:grid-cols-2">

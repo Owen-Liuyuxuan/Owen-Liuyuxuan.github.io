@@ -82,7 +82,7 @@ export default function RepoCard() {
   return (
     <section>
       <h2 className="font-pixel text-sm text-cyan-glow mb-6"
-        data-narrator="GitHub repositories — tools, research code, and AI projects. Auto-updated daily by CI.">
+        data-narrator="My GitHub repos — tools, research code, and side projects. Auto-updated daily.">
         🛠️ ARSENAL — REPOSITORIES
       </h2>
 
