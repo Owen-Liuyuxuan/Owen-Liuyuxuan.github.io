@@ -16,6 +16,12 @@ const OUTPUT_PATH = resolve(__dirname, "../src/data/repos.json");
 const GITHUB_USER = process.env.GITHUB_USER ?? "Owen-Liuyuxuan";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN ?? "";
 
+// ── Exclusions ─────────────────────────────────────────────────────────────────
+// Repos in this list are NEVER included in repos.json.
+const EXCLUDED_REPOS = new Set([
+  "Owen-Liuyuxuan.github.io", // this very site
+]);
+
 // ── Category rules ────────────────────────────────────────────────────────────
 // Edit these to change how repos are grouped and labeled.
 // Each rule has a `match` (boolean or predicate) and a `category` string.
@@ -37,12 +43,13 @@ const CATEGORY_RULES = [
       [
         "everyday_my_arxiv", "paper-helper-server", "gemini_paper2slide",
         "localPDFSummarizer", "llm_pr_analyzer", "openclaw_vscode", "sam3d_uv_float16",
+        "papers_reading_sharing.github.io", // papers reading blog — an AI tool
       ].includes(r.name),
     category: "ai-tools",
   },
   {
     match: (r) =>
-      ["arxiv_word_cloud", "llm_pricing_list", "papers_reading_sharing.github.io"].includes(r.name),
+      ["arxiv_word_cloud", "llm_pricing_list"].includes(r.name),
     category: "data-viz",
   },
   {
@@ -95,7 +102,7 @@ async function fetchAllRepos() {
 function autoGenerateNarratorHint(repo) {
   const parts = [];
   if (repo.description) parts.push(repo.description);
-  if (repo.stargazers_count > 0) parts.push(`⭐ ${repo.stargazers_count} stars.`);
+  if (repo.stars > 0) parts.push(`⭐ ${repo.stars} stars.`);
   if (repo.language) parts.push(`Written in ${repo.language}.`);
   return parts.join(" ") || `${repo.name} — a GitHub repository.`;
 }
@@ -117,19 +124,17 @@ function mergeWithExisting(existing, fresh) {
     const mergedRepo = {
       name: r.name,
       description: r.description ?? "",
-      url: r.html_url,
-      stars: r.stargazers_count,
-      forks: r.forks_count,
+      url: r.url,
+      stars: r.stars,
+      forks: r.forks,
       language: r.language ?? "",
       category: categorize({ name: r.name, topics: r.topics ?? [] }),
       topics: r.topics ?? [],
-      updatedAt: r.updated_at?.slice(0, 10) ?? "",
-      // Preserve human-written narratorHint; only auto-fill if missing
+      updatedAt: r.updatedAt ?? "",
       narratorHint: prev?.narratorHint?.trim()
         ? prev.narratorHint
         : autoGenerateNarratorHint(r),
     };
-    // Also preserve any custom category override from previous file
     if (prev?.categoryOverride) mergedRepo.categoryOverride = prev.categoryOverride;
     return mergedRepo;
   });
@@ -144,6 +149,8 @@ async function main() {
 
   const fresh = raw
     .filter((r) => !r.fork && !r.private)
+    .filter((r) => r.stargazers_count >= 5)         // exclude repos with < 5 stars
+    .filter((r) => !EXCLUDED_REPOS.has(r.name))     // exclude this very site repo
     .map((r) => ({
       name: r.name,
       description: r.description ?? "",
@@ -155,7 +162,6 @@ async function main() {
       updatedAt: r.updated_at?.slice(0, 10) ?? "",
     }));
 
-  // Load existing file to preserve human edits
   let existing = [];
   try {
     existing = JSON.parse(readFileSync(OUTPUT_PATH, "utf-8"));
@@ -167,6 +173,18 @@ async function main() {
 
   writeFileSync(OUTPUT_PATH, JSON.stringify(repos, null, 2) + "\n");
   console.log(`Wrote ${repos.length} repos to ${OUTPUT_PATH}`);
+
+  const excludedNames = new Set(repos.map((r) => r.name).filter((n) => EXCLUDED_REPOS.has(n)));
+  const lowStar = repos.filter((r) => r.stars < 5);
+  if (excludedNames.size > 0) {
+    console.error(`ERROR: excluded repos still present: ${[...excludedNames].join(", ")}`);
+    process.exit(1);
+  }
+  if (lowStar.length > 0) {
+    console.error(`ERROR: repos with <5 stars: ${lowStar.map((r) => r.name).join(", ")}`);
+    process.exit(1);
+  }
+  console.log("Validation passed: no excluded repos, no repos with <5 stars.");
 }
 
 main().catch((err) => {

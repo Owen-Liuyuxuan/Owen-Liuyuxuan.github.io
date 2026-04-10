@@ -1,372 +1,429 @@
 [
   {
-    "title": "MTA-Agent: An Open Recipe for Multimodal Deep Search Agents",
-    "url": "https://arxiv.org/abs/2604.06376v1",
+    "title": "SIM1: Physics-Aligned Simulator as Zero-Shot Data Scaler in Deformable Worlds",
+    "url": "https://arxiv.org/abs/2604.08544v1",
     "authors": [
-      "Xiangyu Peng",
-      "Can Qin",
-      "An Yan",
-      "Xinyi Yang",
-      "Zeyuan Chen",
-      "Ran Xu",
-      "Chien-Sheng Wu"
+      "Yunsong Zhou",
+      "Hangxu Liu",
+      "Xuekun Jiang",
+      "Xing Shen",
+      "Yuanzhen Zhou",
+      "Hui Wang",
+      "Baole Fang",
+      "Yang Tian",
+      "Mulin Yu",
+      "Qiaojun Yu",
+      "Li Ma",
+      "Hengjie Li",
+      "Hanqing Wang",
+      "Jia Zeng",
+      "Jiangmiao Pang"
     ],
-    "published": "2026-04-07",
+    "published": "2026-04-09",
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "abstract": "**\n\nRobotic manipulation with deformable objects represents a data-intensive regime in embodied learning, where shape, contact, and topology co-evolve in ways that far exceed the variability of rigids. Although simulation promises relief from the cost of real-world data acquisition, prevailing sim-to-real pipelines remain rooted in rigid-body abstractions, producing mismatched geometry, fragile soft dynamics, and motion primitives poorly suited for cloth interaction. We posit that simulation fails not for being synthetic, but for being ungrounded. To address this, we introduce SIM1, a physics-aligned real-to-sim-to-real data engine that grounds simulation in the physical world. Given limited demonstrations, the system digitizes scenes into metric-consistent twins, calibrates deformable dynamics through elastic modeling, and expands behaviors via diffusion-based trajectory generation with quality filtering. This pipeline transforms sparse observations into scaled synthetic supervision with near-demonstration fidelity. Experiments show that policies trained on purely synthetic data achieve parity with real-data baselines at a 1:15 equivalence ratio, while delivering 90% zero-shot success and 50% generalization gains in real-world deployment. These results validate physics-aligned simulation as scalable supervision for deformable manipulation and a practical pathway for data-efficient policy learning.\n\n**",
+    "analysis": {
+      "0": "作为计算机视觉与具身智能（Embodied AI）领域的专家，以下是对《SIM1: Physics-Aligned Simulator as Zero-Shot Data Scaler in Deformable Worlds》这篇论文的深度解析：",
+      "1": "该论文提出了一种名为 **SIM1** 的物理对齐（Physics-Aligned）数据引擎，旨在解决机器人操作可变形物体（Deformable Objects）时数据稀缺的难题。通过将少量真实世界观测转化为度量一致（Metric-consistent）的数字孪生，并结合弹性动力学校准与扩散模型轨迹生成，该系统实现了以极低的真实数据依赖（1:15的比例）训练出具备高泛化能力的机器人策略，弥合了合成数据与真实场景间的“真实感鸿沟”。",
+      "method": "*   **物理对齐的数字孪生（Physics-Aligned Digital Twins）：** 不同于传统的随机化模拟，SIM1 强调将真实场景中的形变、接触和拓扑结构实时映射到模拟器中，实现几何与物理属性的度量级对齐。\n*   **弹性动力学校准：** 该方法针对可变形物体（如布料等）的复杂动态特性，通过模型参数化技术进行精细化校准，从而解决了传统刚体模拟器无法模拟软体物体非线性形变的问题。\n*   **基于扩散模型的轨迹增强：** SIM1 不仅仅依赖传统的物理仿真，还利用扩散模型生成符合物理规律的轨迹，并通过“质量过滤（Quality Filtering）”机制筛选出高保真的合成数据，从而在几何空间中进行无损扩展。",
+      "impact": "*   **自动化制造与纺织工业：** 在涉及布料、线缆、食品加工等可变形物体的自动化生产线中具有极高的应用价值。\n*   **医疗机器人：** 软组织操作是外科手术机器人的核心难题，该物理对齐框架可用于手术规划与训练。\n*   **家政机器人：** 机器人处理衣物折叠、床铺整理等复杂家务场景，将从该技术中直接获益。\n*   **计算机视觉（数字孪生）：** 对复杂物理材质的视觉建模与物理属性推断，将进一步推动三维视觉感知的发展。",
+      "limitations": "*   **计算开销：** 尽管训练数据效率高，但“物理对齐”和“数字孪生”的构建过程（涉及复杂的参数校准与扩散模型生成）可能需要较大的实时计算资源。\n*   **极端拓扑变化的鲁棒性：** 对于高度不可预测的拓扑变化（如布料撕裂、复杂纠缠），物理校准的难度依然巨大，可能需要更深层次的力学模型支持。\n*   **对传感精度的依赖：** 该方法的成功高度依赖于初始观测数据的质量，如果真实场景的视觉建模存在闭塞或噪声，可能会导致仿真孪生的精度下降。\n\n**专家总结：**\n这篇论文的精妙之处在于它拒绝了单纯依赖“随机化”或“海量合成”的粗放策略，转而追求“物理精确度”与“生成式多样性”的平衡。对于计算机视觉研究者而言，SIM1 不仅是机器人领域的进步，更代表了**如何通过视觉感知构建物理可解释的数字世界**的重要探索，是未来走向具身智能通用化的关键技术基石之一。\n\n**"
+    },
+    "keyFindings": [
+      "To address this, we introduce SIM1, a physics-aligned real-to-sim-to-real data engine that grounds simulation in the physical world."
+    ],
+    "links": {
+      "pdf": "https://arxiv.org/pdf/2604.08544v1",
+      "arxiv": "https://arxiv.org/abs/2604.08544v1"
+    },
+    "source": "arxiv",
+    "date": "2026-04-10",
+    "narratorHint": "introduce SIM1, a physics-aligned real-to-sim-to-real data engine that grounds s."
+  },
+  {
+    "title": "MolmoWeb: Open Visual Web Agent and Open Data for the Open Web",
+    "url": "https://arxiv.org/abs/2604.08516v1",
+    "authors": [
+      "Tanmay Gupta",
+      "Piper Wolters",
+      "Zixian Ma",
+      "Peter Sushko",
+      "Rock Yuren Pang",
+      "Diego Llanes",
+      "Yue Yang",
+      "Taira Anderson",
+      "Boyuan Zheng",
+      "Zhongzheng Ren",
+      "Harsh Trivedi",
+      "Taylor Blanton",
+      "Caleb Ouellette",
+      "Winson Han",
+      "Ali Farhadi",
+      "Ranjay Krishna"
+    ],
+    "published": "2026-04-09",
     "categories": [
       "cs.CV"
     ],
-    "abstract": "**\n\nMultimodal large language models (MLLMs) have demonstrated strong capabilities in visual understanding, yet they remain limited in complex, multi-step reasoning that requires deep searching and integrating visual evidence with external knowledge. In this work, we address this challenge by constructing high-quality, verified multi-hop vision-language training data for multimodal deep-search agents. We propose a Multi-hop Tool-Augmented Agent for Evidence-based QA Synthesis (MTA-Agent), which automatically selects tools and their parameters to retrieve and validate evidence from both visual and textual sources and generates structured multi-hop question-answer trajectories. Starting from diverse VQA seed datasets, our pipeline produces a large-scale training dataset, MTA-Vision-DeepSearch, containing 21K high-quality multi-hop examples. The data is filtered through a multi-stage verification process to ensure factual consistency and answer uniqueness. Using MTA-Vision-DeepSearch, a 32B open-source multimodal search agent achieves state-of-the-art performance, reaching an average of 54.63\\% across six challenging benchmarks, outperforming GPT-5 (51.86\\%), Gemini-2.5-Pro (50.98\\%), and Gemini-3-Pro (54.46\\%) under the same tool settings. We further show that training on our data improves both reasoning depth and tool-use behavior, increasing the average number of steps from 2.27 to 4.28, and leading to more systematic and persistent search strategies. Additionally, we demonstrate that training can be performed without real-time tool calls by replaying cached interactions, significantly reducing training cost. Importantly, we present MTA-Agent as a fully open recipe for multimodal deep search: we release the entire dataset, training trajectories, and implementation details to enable reproducibility and future research on open multimodal search agents.\n\n**",
+    "abstract": "**\n\nWeb agents--autonomous systems that navigate and execute tasks on the web on behalf of users--have the potential to transform how people interact with the digital world. However, the most capable web agents today rely on proprietary models with undisclosed training data and recipes, limiting scientific understanding, reproducibility, and community-driven progress.   We believe agents for the open web should be built in the open. To this end, we introduce (1) MolmoWebMix, a large and diverse mixture of browser task demonstrations and web-GUI perception data and (2) MolmoWeb, a family of fully open multimodal web agents. Specifically, MolmoWebMix combines over 100K synthetic task trajectories from multiple complementary generation pipelines with 30K+ human demonstrations, atomic web-skill trajectories, and GUI perception data, including referring expression grounding and screenshot question answering. MolmoWeb agents operate as instruction-conditioned visual-language action policies: given a task instruction and a webpage screenshot, they predict the next browser action, requiring no access to HTML, accessibility trees, or specialized APIs.   Available in 4B and 8B size, on browser-use benchmarks like WebVoyager, Online-Mind2Web, and DeepShop, MolmoWeb agents achieve state-of-the-art results outperforming similar scale open-weight-only models such as Fara-7B, UI-Tars-1.5-7B, and Holo1-7B. MolmoWeb-8B also surpasses set-of-marks (SoM) agents built on much larger closed frontier models like GPT-4o. We further demonstrate consistent gains through test-time scaling via parallel rollouts with best-of-N selection, achieving 94.7% and 60.5% pass@4 (compared to 78.2% and 35.3% pass@1) on WebVoyager and Online-Mind2Web respectively. We will release model checkpoints, training data, code, and a unified evaluation harness to enable reproducibility and accelerate open research on web agents.\n\n**",
     "analysis": {
-      "0": "",
-      "5": "- **核心思想**：通过自动化多跳证据链合成与强化学习训练，重塑多模态搜索深度。\n- **速记版pipeline**：\n  1. **筛选**：剔除无需视觉支持的低质种子问题。\n  2. **生长**：使用工具链自动扩展多跳推理链条。\n  3. **净化**：通过事实验证与难度过滤剔除无效样本。\n  4. **缓存**：存储工具响应，实现高效强化学习训练。\n\n**",
-      "summary": "多模态大语言模型（MLLMs）在视觉理解方面展现出强大能力，但在涉及深入搜索和整合外部知识的复杂多步推理任务中仍面临局限。本文解决了这一挑战，构建了高质量、经过验证的多跳视觉-语言训练数据，用于多模态深度搜索代理。我们提出了多跳工具增强型证据合成代理（MTA-Agent），该代理能够自动选择工具及其参数，从视觉和文本源中检索并验证证据，从而生成结构化的多跳问答轨迹。我们的流程从多样化的视觉问答（VQA）种子数据集出发，生成了包含21K个高质量多跳示例的训练数据集（MTA-Vision-DeepSearch）。该数据经过多阶段验证流程，确保了事实一致性和答案唯一性。基于此数据集，32B开源多模态搜索代理在六个具有挑战性的基准测试中平均准确率达到54.63%，在相同工具设置下超越了GPT-5（51.86%）和Gemini系列。此外，训练不仅提高了推理深度（平均步数从2.27提升至4.28），还显著降低了训练成本。",
-      "method": "- **本质区别**：从“静态数据收集”转向“自动构建多跳动态轨迹”，不仅关注答案正确性，还通过RL强制优化推理路径。\n- **创新点**：提出了一个端到端的自动化合成框架；实现了基于难度的样本选择策略；开发了基于工具响应缓存的低成本训练方案。\n- **适用场景**：适用于需要长链条、跨模态事实聚合的复杂问答与搜索任务。",
-      "experiment": "- **验证方法**：在6个主流搜索基准测试上对比商业模型（GPT-5, Gemini）和开源基线。\n- **关键结果**：MTA-DeepSearch-32B在平均准确率上达到了54.63%，超越了同规模及部分商业模型。\n- **优势**：显著提升了模型的推理深度（从2.27步增加到4.28步），且模型表现出更具逻辑性的“两阶段”搜索策略（先文本检索，后视觉定位）。\n- **局限**：对种子数据集的质量有一定依赖，且合成流程对计算资源的消耗依然较大。",
-      "related": "- **开源情况**：代码、数据集和模型已开源（https://github.com/SalesforceAIResearch/MTA-Agent）。\n- **实现细节**：训练需使用DAPO强化学习算法；关键点在于通过验证流程筛选掉冗余信息；模型工具使用分布需在训练后保持结构的稳定性。\n- **迁移建议**：该框架的检索验证流程可直接迁移到其他垂直领域（如医疗或法律文档问答）。"
+      "0": "## 1. 摘要翻译\n\nWeb 代理（autonomous web agents）能够代表用户在网页上进行导航和执行任务，具有改变人类与数字世界交互方式的潜力。然而，目前最强大的 web 代理依赖于闭源的专有模型，其训练数据和方法不透明，限制了科学理解、可复现性和社区协作。我们认为开放网络代理应该在开源环境下构建。为此，我们引入了：(1) **MolmoWebMix**，一个由浏览器任务演示和 GUI 感知数据组成的庞大且多样化的数据集；(2) **MolmoWeb**，一个全开放的多模态 web 代理系列。MolmoWeb 代理作为指令条件下的视觉语言行动策略（instruction-conditioned visual-language action policies）运行：给定任务指令和网页截图，它们直接预测下一个浏览器动作，无需访问 HTML、可访问性树（AxTree）或专门的 API。MolmoWeb 代理提供 4B 和 8B 两种规模，在 WebVoyager、Online-Mind2Web 和 DeepShop 等浏览器使用基准测试上取得了最先进的（SOTA）结果，超越了同等规模的开源模型。MolmoWeb-8B 甚至在性能上超越了基于 GPT-4o 等更大封闭模型构建的 Set-of-Marks (SoM) 代理。我们通过并行推理（parallel rollouts）和 best-of-N 选择进一步证明了其性能的持续提升。我们将发布模型检查点、训练数据、代码和统一评估工具，以促进可复现性并加速开放网络代理的研究。\n\n## 2. 方法动机分析\n\n- **驱动力**：打破 web 代理领域“闭源垄断”的局面，建立一套完全透明、科学且可复现的开放研究基准。\n- **现有方法痛点**：主流 web 代理多依赖于专有模型和未公开的训练数据，且常依赖 AxTree 或 DOM 结构，导致跨网站的泛化性差、对动态内容脆弱且计算成本高昂。\n- **研究假设**：通过高质量、大规模的混合训练数据（含合成轨迹、人类演示、GUI 感知数据），纯视觉输入（visual-only）的轻量级模型能够实现比依赖结构化信息（如 AxTree）的复杂代理更强的任务完成率。\n\n## 3. 方法设计详解\n\n- **流程总结**：\n  1. **数据混合 (MolmoWebMix)**：包含四类数据：合成轨迹（基于 AxTree 代理生成的 100K+ 数据）、人类演示（30K+ 真实网站交互）、原子技能轨迹（特定操作序列）和 GUI 感知数据（ grounding 和 QA）。\n  2. **模型架构**：基于 Molmo2 视觉语言模型架构（包含 Qwen3 LLM 和 SigLIP2 视觉编码器），进行端到端监督微调（SFT）。\n  3. **交互方式**：模型接收网页截图、指令和历史动作作为输入，直接预测下一步浏览器动作（鼠标坐标、键盘输入等）。\n  4. **推理优化**：通过并行推理与 best-of-N 选择，利用 LLM-as-a-judge 筛选最优轨迹，显著降低了错误累积带来的任务失败率。\n- **模型结构**：采用了轻量化的 4B/8B 参数规模，通过纯视觉输入（截图）实现了对复杂界面的理解，避开了 DOM 树解析带来的不稳定性。\n\n## 4. 方法对比分析\n\n- **本质区别**：与依赖网页结构（HTML/AxTree）的代理不同，MolmoWeb 采用纯视觉范式，通过大规模混合数据训练，使轻量模型获得了远超其参数规模的任务完成能力。\n- **创新贡献**：\n  1. **数据闭环**：通过多智能体协作、人类演示与 GUI 感知训练，构建了高质量的开放数据集。\n  2. **推理机制**：验证了并行推理策略能有效缓解 web 代理常见的“行动偏离”问题，实现了显著的性能提升。\n- **适用场景**：广泛的网页导航与任务执行，尤其适用于对数据透明度有严格要求的企业级应用或学术研究。\n\n## 5. 实验分析\n\n- **验证方法**：在 WebVoyager, Online-Mind2Web, DeepShop, WebTailBench 四大基准测试上进行评估。\n- **关键结果**：MolmoWeb-8B 超过了同规模开源模型，且在部分基准上超越了基于 GPT-4o 这一超大封闭模型的代理。\n- **主要优势**：不仅性能领先，且实现了全链路开源（数据、模型、 pipeline），具有高度可复现性。\n- **主要局限**：对极短文本的识别仍有待提高；在面对长文本理解时，推理效率和正确率会受模型规模限制。\n\n## 6. 实用指南\n\n- **开源情况**：模型权重、训练数据及评估工具已全面开放（可查阅其 GitHub/HuggingFace 仓库）。\n- **实现细节**：建议使用 HuggingFace 推荐的 Top-p 采样策略（p=0.8, T=0.7）以获得最佳生成效果。训练阶段需注意不同数据类型的 mixing ratio。\n- **迁移可能**：该框架易于迁移至其他多模态交互任务（如桌面应用自动化、软件界面 UI 测试），仅需补充对应的 GUI 感知数据和操作轨迹。\n\n## 7. 总结\n\n- **核心思想**：纯视觉端到端训练实现开放式高性能 web 代理。\n- **速记版pipeline**：\n  1. 收集海量网页交互轨迹与 GUI 感知数据；\n  2. 微调轻量级视觉语言模型作为行动策略；\n  3. 通过多步骤并行推理筛选最佳路径；\n  4. 输出精准浏览器动作序列。\n\n**"
     },
     "keyFindings": [
-      "We propose a Multi-hop Tool-Augmented Agent for Evidence-based QA Synthesis (MTA-Agent), which automatically selects tools and their parameters to retrieve and validate evidence from both visual and textual sources and generates structured multi-hop question-answer trajectories.",
-      "Using MTA-Vision-DeepSearch, a 32B open-source multimodal search agent achieves state-of-the-art performance, reaching an average of 54.63\\% across six challenging benchmarks, outperforming GPT-5 (51.86\\%), Gemini-2.5-Pro (50.98\\%), and Gemini-3-Pro (54.46\\%) under the same tool settings.",
-      "Additionally, we demonstrate that training can be performed without real-time tool calls by replaying cached interactions, significantly reducing training cost.",
-      "Importantly, we present MTA-Agent as a fully open recipe for multimodal deep search: we release the entire dataset, training trajectories, and implementation details to enable reproducibility and future research on open multimodal search agents."
+      "To this end, we introduce (1) MolmoWebMix, a large and diverse mixture of browser task demonstrations and web-GUI perception data and (2) MolmoWeb, a family of fully open multimodal web agents.",
+      "MolmoWeb agents operate as instruction-conditioned visual-language action policies: given a task instruction and a webpage screenshot, they predict the next browser action, requiring no access to HTML, accessibility trees, or specialized APIs.   Available in 4B and 8B size, on browser-use benchmarks like WebVoyager, Online-Mind2Web, and DeepShop, MolmoWeb agents achieve state-of-the-art results outperforming similar scale open-weight-only models such as Fara-7B, UI-Tars-1.5-7B, and Holo1-7B."
     ],
     "links": {
-      "pdf": "https://arxiv.org/pdf/2604.06376v1",
-      "arxiv": "https://arxiv.org/abs/2604.06376v1"
+      "pdf": "https://arxiv.org/pdf/2604.08516v1",
+      "arxiv": "https://arxiv.org/abs/2604.08516v1"
     },
     "source": "arxiv",
-    "date": "2026-04-09",
-    "narratorHint": "propose a Multi-hop Tool-Augmented Agent for Evidence-based QA Synthesis (MTA-Ag."
+    "date": "2026-04-10",
+    "narratorHint": "introduce (1) MolmoWebMix, a large and diverse mixture of browser task demonstra."
   },
   {
-    "title": "Fast Spatial Memory with Elastic Test-Time Training",
-    "url": "https://arxiv.org/abs/2604.07350v1",
+    "title": "EgoVerse: An Egocentric Human Dataset for Robot Learning from Around the World",
+    "url": "https://arxiv.org/abs/2604.07607v1",
     "authors": [
-      "Ziqiao Ma",
-      "Xueyang Yu",
-      "Haoyu Zhen",
-      "Yuncong Yang",
-      "Joyce Chai",
-      "Chuang Gan"
+      "Ryan Punamiya",
+      "Simar Kareer",
+      "Zeyi Liu",
+      "Josh Citron",
+      "Ri-Zhao Qiu",
+      "Xiongyi Cai",
+      "Alexey Gavryushin",
+      "Jiaqi Chen",
+      "Davide Liconti",
+      "Lawrence Y. Zhu",
+      "Patcharapong Aphiwetsa",
+      "Baoyu Li",
+      "Aniketh Cheluva",
+      "Pranav Kuppili",
+      "Yangcen Liu",
+      "Dhruv Patel",
+      "Aidan Gao",
+      "Hye-Young Chung",
+      "Ryan Co",
+      "Renee Zbizika",
+      "Jeff Liu",
+      "Xiaomeng Xu",
+      "Haoyu Xiong",
+      "Geng Chen",
+      "Sebastiano Oliani",
+      "Chenyu Yang",
+      "Xi Wang",
+      "James Fort",
+      "Richard Newcombe",
+      "Josh Gao",
+      "Jason Chong",
+      "Garrett Matsuda",
+      "Aseem Doriwala",
+      "Marc Pollefeys",
+      "Robert Katzschmann",
+      "Xiaolong Wang",
+      "Shuran Song",
+      "Judy Hoffman",
+      "Danfei Xu"
     ],
     "published": "2026-04-08",
     "categories": [
-      "cs.CV",
-      "cs.GR",
-      "cs.LG"
-    ],
-    "abstract": "**\n\nLarge Chunk Test-Time Training (LaCT) has shown strong performance on long-context 3D reconstruction, but its fully plastic inference-time updates remain vulnerable to catastrophic forgetting and overfitting. As a result, LaCT is typically instantiated with a single large chunk spanning the full input sequence, falling short of the broader goal of handling arbitrarily long sequences in a single pass. We propose Elastic Test-Time Training inspired by elastic weight consolidation, that stabilizes LaCT fast-weight updates with a Fisher-weighted elastic prior around a maintained anchor state. The anchor evolves as an exponential moving average of past fast weights to balance stability and plasticity. Based on this updated architecture, we introduce Fast Spatial Memory (FSM), an efficient and scalable model for 4D reconstruction that learns spatiotemporal representations from long observation sequences and renders novel view-time combinations. We pre-trained FSM on large-scale curated 3D/4D data to capture the dynamics and semantics of complex spatial environments. Extensive experiments show that FSM supports fast adaptation over long sequences and delivers high-quality 3D/4D reconstruction with smaller chunks and mitigating the camera-interpolation shortcut. Overall, we hope to advance LaCT beyond the bounded single-chunk setting toward robust multi-chunk adaptation, a necessary step for generalization to genuinely longer sequences, while substantially alleviating the activation-memory bottleneck.\n\n**",
-    "analysis": {
-      "0": "",
-      "5": "- **核心思想**：通过Fisher加权弹性正则与EMA锚定，稳定在线学习过程。\n- **速记版pipeline**：\n  1. 将视频分块并编码为视觉Token。\n  2. 进行在线测试时参数更新。\n  3. 评估参数重要性并执行弹性约束。\n  4. 平滑更新记忆锚点。\n  5. 解码渲染结果。\n\n**",
-      "summary": "大规模块状测试时训练（LaCT）在长上下文3D重建中表现优异，但其完全可塑的推理时更新极易导致灾难性遗忘和过拟合。因此，LaCT通常局限于单一大块，难以处理任意长序列。本文提出了“弹性测试时训练”（Elastic Test-Time Training），通过受弹性权重固化（EWC）启发而设计的Fisher加权弹性先验，在保持锚定状态的同时稳定了快速权重的更新。该锚定状态作为过去权重的指数移动平均（EMA）进行演进，实现了稳定性与可塑性的平衡。基于此，我们引入了“快速空间记忆”（FSM），一种高效、可扩展的4D重建模型，能够从长观察序列中学习时空表征并渲染新视角。实验证明，FSM在长序列上具备快速适应能力，且缓解了相机插值捷径问题。",
-      "method": "- **本质区别**：与传统TTT不同，LaCET引入了二阶重要性度量（Fisher信息）与平滑的锚点演进，实现了从“纯适应”到“有记忆的适应”的范式转变。\n- **创新点**：将EWC从离线持续学习迁移到在线测试时训练，通过 Streaming-EMA 解决了动态场景下的灾难性遗忘问题。",
-      "experiment": "- **验证方法**：在Stereo4D、DL3DV等长序列数据集上评估4D视角合成效果。\n- **关键结论**：在稀疏视角输入下，LaCET比普通LaCT提升显著；在高密度输入下，LaCET能有效抑制“相机插值”倾向，表现更稳健。\n- **局限**：对极复杂的长距离相机移动和严重的遮挡，仍可能出现微弱的“残影”或运动一致性偏差。",
-      "related": "- **开源情况**：已在官方Github开源。\n- **实现细节**：关键超参数为 $\\lambda_{ewc}$（正则强度）和 EMA 的衰减因子 $\\alpha$。建议在实施时使用Streaming-EMA作为默认锚点策略。\n- **迁移可能**：可直接应用于任何基于 Transformer 的长序列自回归建模任务（如视频生成、长文本处理等），核心在于将模型状态视为需进行弹性优化的“快速权重”。"
-    },
-    "keyFindings": [
-      "We propose Elastic Test-Time Training inspired by elastic weight consolidation, that stabilizes LaCT fast-weight updates with a Fisher-weighted elastic prior around a maintained anchor state.",
-      "Based on this updated architecture, we introduce Fast Spatial Memory (FSM), an efficient and scalable model for 4D reconstruction that learns spatiotemporal representations from long observation sequences and renders novel view-time combinations."
-    ],
-    "links": {
-      "pdf": "https://arxiv.org/pdf/2604.07350v1",
-      "arxiv": "https://arxiv.org/abs/2604.07350v1"
-    },
-    "source": "arxiv",
-    "date": "2026-04-09",
-    "narratorHint": "propose Elastic Test-Time Training inspired by elastic weight consolidation, tha."
-  },
-  {
-    "title": "From Blobs to Spokes: High-Fidelity Surface Reconstruction via Oriented Gaussians",
-    "url": "https://arxiv.org/abs/2604.07337v1",
-    "authors": [
-      "Diego Gomez",
-      "Antoine Guédon",
-      "Nissim Maruani",
-      "Bingchen Gong",
-      "Maks Ovsjanikov"
-    ],
-    "published": "2026-04-08",
-    "categories": [
+      "cs.RO",
       "cs.CV"
     ],
-    "abstract": "**\n\n3D Gaussian Splatting (3DGS) has revolutionized fast novel view synthesis, yet its opacity-based formulation makes surface extraction fundamentally difficult. Unlike implicit methods built on Signed Distance Fields or occupancy, 3DGS lacks a global geometric field, forcing existing approaches to resort to heuristics such as TSDF fusion of blended depth maps.   Inspired by the Objects as Volumes framework, we derive a principled occupancy field for Gaussian Splatting and show how it can be used to extract highly accurate watertight meshes of complex scenes. Our key contribution is to introduce a learnable oriented normal at each Gaussian element and to define an adapted attenuation formulation, which leads to closed-form expressions for both the normal and occupancy fields at arbitrary locations in space. We further introduce a novel consistency loss and a dedicated densification strategy to enforce Gaussians to wrap the entire surface by closing geometric holes, ensuring a complete shell of oriented primitives. We modify the differentiable rasterizer to output depth as an isosurface of our continuous model, and introduce Primal Adaptive Meshing for Region-of-Interest meshing at arbitrary resolution.   We additionally expose fundamental biases in standard surface evaluation protocols and propose two more rigorous alternatives. Overall, our method Gaussian Wrapping sets a new state-of-the-art on DTU and Tanks and Temples, producing complete, watertight meshes at a fraction of the size of concurrent work-recovering thin structures such as the notoriously elusive bicycle spokes.\n\n**",
+    "abstract": "**\n\nRobot learning increasingly depends on large and diverse data, yet robot data collection remains expensive and difficult to scale. Egocentric human data offer a promising alternative by capturing rich manipulation behavior across everyday environments. However, existing human datasets are often limited in scope, difficult to extend, and fragmented across institutions. We introduce EgoVerse, a collaborative platform for human data-driven robot learning that unifies data collection, processing, and access under a shared framework, enabling contributions from individual researchers, academic labs, and industry partners. The current release includes 1,362 hours (80k episodes) of human demonstrations spanning 1,965 tasks, 240 scenes, and 2,087 unique demonstrators, with standardized formats, manipulation-relevant annotations, and tooling for downstream learning. Beyond the dataset, we conduct a large-scale study of human-to-robot transfer with experiments replicated across multiple labs, tasks, and robot embodiments under shared protocols. We find that policy performance generally improves with increased human data, but that effective scaling depends on alignment between human data and robot learning objectives. Together, the dataset, platform, and study establish a foundation for reproducible progress in human data-driven robot learning. Videos and additional information can be found at https://egoverse.ai/\n\n**",
     "analysis": {
-      "0": "作为计算机视觉领域的专家，我对这篇题为《From Blobs to Spokes: High-Fidelity Surface Reconstruction via Oriented Gaussians》的论文分析如下：",
-      "summary": "该论文提出了名为 **Gaussian Wrapping** 的新型3D高斯重建框架，旨在克服标准3DGS在表面重建方面的内在缺陷。通过引入可学习的“定向法线”和自适应衰减公式，该研究成功推导出了闭式（closed-form）的占用场（occupancy field），从而能够直接从高斯基元中提取出精细、封闭（watertight）且具备高几何保真度的三维网格，尤其是在处理极细结构（如自行车辐条）方面表现卓越。",
-      "method": "*   **定向高斯（Oriented Gaussians）：** 传统3DGS将高斯视为各向异性的“团块”（blobs），该论文在每个高斯基元中引入了可学习的法线方向，赋予了基元几何朝向属性。\n*   **闭式占用场（Closed-form Occupancy Field）：** 借鉴“Objects as Volumes”框架，将高斯的物理分布与占用场关联，通过重新定义的衰减函数，使得空间中任意点的占用率和法线值均可由闭式表达式计算。\n*   **几何一致性约束：** 引入了专门的正则化损失（Consistency Loss）和针对性的致密化（Densification）策略，强迫高斯基元通过“包裹”方式填补几何空洞，确保表面连通性。\n*   **原语自适应网格划分（Primal Adaptive Meshing）：** 允许以任意分辨率在感兴趣区域进行局部网格化，实现了渲染效率与表面精度的解耦。",
-      "impact": "*   **数字遗产与博物馆数字化：** 能够处理复杂、细微的雕塑和建筑结构，生成高质量的可交互模型。\n*   **自动驾驶仿真：** 能够精确还原路侧设施（如护栏、标志杆）的几何结构，而非仅仅是视觉上的像素投影。\n*   **AR/VR交互：** 提取的 watertight 网格可以直接导入引擎（如Unity/Unreal）进行物理模拟和光线追踪，提升沉浸感。\n*   **CAD/CAM与逆向工程：** 为实物扫描转模型提供了一种比传统结构光扫描更灵活、更低成本的软件替代方案。",
-      "limitations": "*   **计算复杂性：** 尽管引入了闭式表达，但为了维持高几何精度，其致密化策略和损失函数可能增加了训练阶段的内存消耗与计算时间。\n*   **复杂环境下的泛化能力：** 虽然在DTU和Tanks and Temples等基准集表现出色，但在处理高度透明、反光材质（如玻璃、金属）时，依靠法线一致性约束的方法仍可能面临几何伪影的挑战。\n*   **拓扑突变的处理：** 虽然旨在生成完整封闭表面，但对于剧烈变化的几何拓扑（如深度不连续处），算法是否会产生“粘连”效应（即把不相连的几何表面强行连接）仍有待验证。\n\n**总结：** 该论文通过数学建模将3DGS的“外观生成能力”与“几何构建能力”深度融合，是当前神经渲染领域向几何重建迈进的标志性工作，极大地缩小了科研模型与工业生产网格质量之间的差距。\n\n**"
+      "0": "作为计算机视觉和机器人学习领域的专家，我对《EgoVerse》这篇论文的分析如下：",
+      "summary": "《EgoVerse》提出了一个旨在解决机器人数据稀缺与碎片化问题的协同平台，通过统一化流程聚合了来自全球的1,362小时大规模第一人称（Egocentric）人类操作演示数据。该研究不仅构建了一个包含海量任务和场景的标准化数据集，还通过跨实验室的大规模实证研究，系统性地揭示了人类数据向机器人策略迁移的缩放定律（Scaling Laws）及其关键影响因素。",
+      "method": "*   **众包与协同生态系统**：打破了以往数据集仅由单一实验室维护的局限，通过“统一框架+协作平台”模式，实现了数据采集、处理与访问的流水线化，极大地提升了数据的多样性与可扩展性。\n*   **标准化多模态标注**：该数据集提供了专门针对“操作（Manipulation）”优化的标准化格式，弥补了现有第一人称视角数据在机器人学习任务中语义信息缺失的问题。\n*   **多实验室协同复现研究**：创新性地在多个实验室、不同机器人形态（Robot Embodiments）及多样化任务场景下，执行了统一实验协议的迁移学习评估，这在机器人学习领域是极为罕见的范式。",
+      "impact": "*   **通用机器人基础模型 (Generalist Robot Foundation Models)**：为训练可以在家务、工业制造等复杂非结构化环境工作的通用机器人策略提供核心数据引擎。\n*   **第一人称视觉理解 (Egocentric Vision)**：在AR/VR交互、智能穿戴设备、视频理解与动作识别领域，该数据规模将显著推动视觉模型对复杂手部操作与对象交互的建模能力。\n*   **模仿学习与强化学习**：为复杂任务下的模仿学习（Imitation Learning）提供了高质量的初始演示（Demonstrations），极大降低了探索成本。",
+      "limitations": "*   **领域差异（Sim-to-Real/Human-to-Robot Gap）**：尽管论文强调了迁移研究，但人类手部操作的自由度与机器人执行器的运动学约束（Kinematic Constraints）之间存在天然鸿沟，如何有效处理这种“形态学差异”仍是数据驱动学习的核心难点。\n*   **数据质量与噪声控制**：众包数据往往面临质量参差不齐的问题，即使有标准化流水线，如何通过算法自动清洗或加权处理大规模噪声数据仍具有挑战。\n*   **长尾任务的分布偏差**：虽然包含了1,965个任务，但在实际物理世界中，长尾场景（Rare cases）依然可能存在覆盖不足，这限制了模型在极端环境下的鲁棒性。\n\n**专家点评：**\nEgoVerse 的核心价值在于它不再仅仅是一个单纯的“数据集”，而是一个**“社区化基础设施”**。在当前具身智能大模型急需高质量人类演示数据的背景下，该论文通过跨机构协作试图解决数据质量与标注不统一的问题，是迈向机器人规模化学习的重要一步。对于 CV 领域的研究者而言，如何利用这些第一人称视频学习“交互动作语义”，将是后续研究的高价值方向。\n\n**"
     },
     "keyFindings": [
-      "3D Gaussian Splatting (3DGS) has revolutionized fast novel view synthesis, yet its opacity-based formulation makes surface extraction fundamentally difficult.",
-      "Our key contribution is to introduce a learnable oriented normal at each Gaussian element and to define an adapted attenuation formulation, which leads to closed-form expressions for both the normal and occupancy fields at arbitrary locations in space.",
-      "We further introduce a novel consistency loss and a dedicated densification strategy to enforce Gaussians to wrap the entire surface by closing geometric holes, ensuring a complete shell of oriented primitives.",
-      "Overall, our method Gaussian Wrapping sets a new state-of-the-art on DTU and Tanks and Temples, producing complete, watertight meshes at a fraction of the size of concurrent work-recovering thin structures such as the notoriously elusive bicycle spokes."
+      "We introduce EgoVerse, a collaborative platform for human data-driven robot learning that unifies data collection, processing, and access under a shared framework, enabling contributions from individual researchers, academic labs, and industry partners."
     ],
     "links": {
-      "pdf": "https://arxiv.org/pdf/2604.07337v1",
-      "arxiv": "https://arxiv.org/abs/2604.07337v1"
+      "pdf": "https://arxiv.org/pdf/2604.07607v1",
+      "arxiv": "https://arxiv.org/abs/2604.07607v1"
     },
     "source": "arxiv",
-    "date": "2026-04-09",
-    "narratorHint": "introduce a learnable oriented normal at each Gaussian element and to define an ."
+    "date": "2026-04-10",
+    "narratorHint": "introduce EgoVerse, a collaborative platform for human data-driven robot learnin."
   },
   {
-    "title": "TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks",
-    "url": "https://arxiv.org/abs/2604.07335v1",
+    "title": "SANDO: Safe Autonomous Trajectory Planning for Dynamic Unknown Environments",
+    "url": "https://arxiv.org/abs/2604.07599v1",
     "authors": [
-      "Longyan Wu",
-      "Jieji Ren",
-      "Chenghang Jiang",
-      "Junxi Zhou",
-      "Shijia Peng",
-      "Ran Huang",
-      "Guoying Gu",
-      "Li Chen",
-      "Hongyang Li"
+      "Kota Kondo",
+      "Jesús Tordesillas",
+      "Jonathan P. How"
     ],
     "published": "2026-04-08",
     "categories": [
       "cs.RO"
     ],
-    "abstract": "**\n\nHandheld paradigms offer an efficient and intuitive way for collecting large-scale demonstration of robot manipulation. However, achieving contact-rich bimanual manipulation through these methods remains a pivotal challenge, which is substantially hindered by hardware adaptability and data efficacy. Prior hardware designs remain gripper-specific and often face a trade-off between tracking precision and portability. Furthermore, the lack of online feasibility checking during demonstration leads to poor replayability. More importantly, existing handheld setups struggle to collect interactive recovery data during robot execution, lacking the authentic tactile information necessary for robust policy refinement. To bridge these gaps, we present TAMEn, a tactile-aware manipulation engine for closed-loop data collection in contact-rich tasks. Our system features a cross-morphology wearable interface that enables rapid adaptation across heterogeneous grippers. To balance data quality and environmental diversity, we implement a dual-modal acquisition pipeline: a precision mode leveraging motion capture for high-fidelity demonstrations, and a portable mode utilizing VR-based tracking for in-the-wild acquisition and tactile-visualized recovery teleoperation. Building on this hardware, we unify large-scale tactile pretraining, task-specific bimanual demonstrations, and human-in-the-loop recovery data into a pyramid-structured data regime, enabling closed-loop policy refinement. Experiments show that our feasibility-aware pipeline significantly improves demonstration replayability, and that the proposed visuo-tactile learning framework increases task success rates from 34% to 75% across diverse bimanual manipulation tasks. We further open-source the hardware and dataset to facilitate reproducibility and support research in visuo-tactile manipulation.\n\n**",
+    "abstract": "**\n\nSANDO is a safe trajectory planner for 3D dynamic unknown environments, where obstacle locations and motions are unknown a priori and a collision-free plan can become unsafe at any moment, requiring fast replanning. Existing soft-constraint planners are fast but cannot guarantee collision-free paths, while hard-constraint methods ensure safety at the cost of longer computation. SANDO addresses this trade-off through three contributions. First, a heat map-based A* global planner steers paths away from high-risk regions using soft costs, and a spatiotemporal safe flight corridor (STSFC) generator produces time-layered polytopes that inflate obstacles only by their worst-case reachable set at each time layer, rather than by the worst case over the entire horizon. Second, trajectory optimization is formulated as a Mixed-Integer Quadratic Program (MIQP) with hard collision-avoidance constraints, and a variable elimination technique reduces the number of decision variables, enabling fast computation. Third, a formal safety analysis establishes collision-free guarantees under explicit velocity-bound and estimation-error assumptions. Ablation studies show that variable elimination yields up to 7.4x speedup in optimization time, and that STSFCs are critical for feasibility in dense dynamic environments. Benchmark simulations against state-of-the-art methods across standardized static benchmarks, obstacle-rich static forests, and dynamic environments show that SANDO consistently achieves the highest success rate with no constraint violations across all difficulty levels; perception-only experiments without ground truth obstacle information confirm robust performance under realistic sensing. Hardware experiments on a UAV with fully onboard planning, perception, and localization demonstrate six safe flights in static environments and ten safe flights among dynamic obstacles.\n\n**",
     "analysis": {
-      "0": "这是一份针对论文 **\"TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks\"** 的深度技术分析。\n\n---",
-      "5": "- **核心思想**：通过触觉反馈与可行性校验构建闭环数据采集系统，实现具身智能演化。\n- **速记版pipeline**：\n  1. 模块化手持设备采集演示；\n  2. 实时机器人运动学可行性校验；\n  3. 触觉辅助的AR远程纠偏与恢复；\n  4. 分层金字塔数据闭环迭代策略。\n\n**",
-      "summary": "手持式数据采集范式为机器人操作提供了高效直观的演示收集方式，但实现接触丰富（contact-rich）的双臂操作仍面临硬件适配性与数据效能的挑战。现有方案通常在跟踪精度与便携性之间存在权衡，且缺乏在线可行性检查，导致数据重放失败率高。更重要的是，现有方案难以收集机器人执行过程中的交互式恢复数据，导致策略细化缺乏必要的触觉信息。为此，我们提出了 **TAMEn**（触觉感知操作引擎），一套用于接触丰富任务闭环数据采集的系统。该系统包含一个可适应异构末端执行器的穿戴式接口，并采用“双模式”采集流水线：利用动作捕捉实现高精度演示，利用VR跟踪实现“野外”采集及触觉可视化恢复远程操作。基于此硬件，我们将大规模触觉预训练、特定任务双臂演示及人机协作恢复数据统一为金字塔结构的数据体系，实现闭环策略细化。实验表明，该系统显著提升了演示的可重放性，通过视觉-触觉学习框架，使平均任务成功率从 34% 提升至 75%。\n\n---",
-      "method": "- **本质区别**：与现有单纯的采集框架不同，TAMEn 首次将“硬件适应性”、“在线可行性核验”与“触觉反馈恢复”深度耦合。\n- **创新点**：\n  - **结构化动捕**：将手柄视为结构化标记对象，提升了 occlusion（遮挡）下的鲁棒性。\n  - **闭环飞行数据记录（Data Flywheel）**：通过 AR 介入策略执行并实时收集纠偏数据，形成了可持续进化的数据闭环。\n\n---",
-      "experiment": "- **关键结果**：在线可行性校验将 replay 成功率从 26% 提升至 100%；加入触觉预训练使成功率提升至 65%，引入在线恢复数据后最终达到 75%。\n- **核心优势**：极强的鲁棒性，特别是在视觉不确定（灯光变化、反光）的情况下，触觉反馈能补偿视觉感知缺陷。\n- **主要局限**：对操作者的技能有一定门槛（如恢复模式下的实时干预）；目前主要针对单一的视觉-触觉模态对齐。\n\n---",
-      "related": "- **开源情况**：项目主页 `https://opendrivelab.com/TAMEn`，提供硬件设计模型。\n- **迁移指南**：针对新抓取器，仅需调整连杆机构（如平行夹爪的连杆长度 $l_b$）即可通过几何模板映射实现适配。\n- **训练细节**：训练时采用三阶段策略：先对比学习初始化触觉编码器，再进行监督策略学习（ACT），最后进行基于 DAgger 的修正数据微调。\n\n---"
+      "4": "- **核心思想**：通过时空分层膨胀与降维硬约束优化实现实时安全避障。\n- **速记版pipeline**：\n  1. 障碍物追踪与轨迹预测。\n  2. 热图辅助生成全局路径。\n  3. 动态生成时空分层安全走廊。\n  4. 执行降维MIQP实时轨迹优化。\n\n**",
+      "summary": "本文提出了SANDO，一种针对3D动态未知环境的自主轨迹规划器。在动态未知环境中，障碍物的位置和运动不可预测，需快速重规划。现有的软约束规划器速度快但缺乏安全保证，而硬约束方法通常计算成本高。SANDO通过三项贡献解决了这一权衡：首先，利用热图辅助的A*全局规划器结合时空安全飞行走廊（STSFC）生成器，通过仅在各时间层膨胀障碍物的最坏情况可达集，而非整个时间跨度，避免了过度保守；其次，轨迹优化被构建为一种引入变量消除技术的混合整数二次规划（MIQP），显著降低了决策变量数量，实现了实时计算；最后，通过形式化安全分析建立了显式速度限制下的碰撞避让保证。模拟与实机实验验证了SANDO在动态环境中的高成功率、无约束违规及实时避障性能。",
+      "method": "- **本质区别**：SANDO实现了“时空分层”的硬约束，与基于纯空间膨胀的FASTER或基于软惩罚的EGO-Planner不同，它在保证安全的前提下最大限度保留了自由空间。\n- **创新贡献**：提出了时空安全飞行走廊（STSFC）和基于变量消除的MIQP实时优化框架，兼顾了安全性与计算效率。\n- **适用场景**：高动态、高密度障碍物的未知环境，特别适用于无人机等算力有限的移动机器人系统。",
+      "experiment": "- **验证方法**：在静态森林、动态模拟器（Gazebo）及实机（X500无人机）中进行广泛对比测试。\n- **关键结果**：在动态环境下，SANDO在所有难度水平下均实现了100%的成功率，且没有产生任何速度、加速度或加加速度的约束违规，计算时间比同类硬约束算法显著缩短。\n- **局限性**：在极度密集的环境中，过度的最坏情况膨胀仍可能导致局部解算失败（递归可行性依赖于持续重规划而非理论覆盖）。",
+      "related": "- **开源情况**：已开源，代码见：`https://github.com/mit-acl/sando.git`\n- **实现细节**：关键超参数为`N`（轨迹片段数，推荐4-6）和变量消除技术的预计算。多线程并行计算时间分配因子是提升成功率的关键步骤。\n- **迁移可能**：可直接应用于地面移动机器人或其他高动态场景，只需调整动力学约束模型和碰撞预测逻辑。"
     },
     "keyFindings": [
-      "To bridge these gaps, we present TAMEn, a tactile-aware manipulation engine for closed-loop data collection in contact-rich tasks."
+      "SANDO addresses this trade-off through three contributions.",
+      "Benchmark simulations against state-of-the-art methods across standardized static benchmarks, obstacle-rich static forests, and dynamic environments show that SANDO consistently achieves the highest success rate with no constraint violations across all difficulty levels; perception-only experiments without ground truth obstacle information confirm robust performance under realistic sensing."
     ],
     "links": {
-      "pdf": "https://arxiv.org/pdf/2604.07335v1",
-      "arxiv": "https://arxiv.org/abs/2604.07335v1"
+      "pdf": "https://arxiv.org/pdf/2604.07599v1",
+      "arxiv": "https://arxiv.org/abs/2604.07599v1"
     },
     "source": "arxiv",
-    "date": "2026-04-09",
-    "narratorHint": "present TAMEn, a tactile-aware manipulation engine for closed-loop data collecti."
+    "date": "2026-04-10",
+    "narratorHint": "achieves the highest success rate with no constraint violations across all diffi."
   },
   {
-    "title": "RoSHI: A Versatile Robot-oriented Suit for Human Data In-the-Wild",
-    "url": "https://arxiv.org/abs/2604.07331v1",
+    "title": "HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents",
+    "url": "https://arxiv.org/abs/2604.07430v1",
     "authors": [
-      "Wenjing Margaret Mao",
-      "Jefferson Ng",
-      "Luyang Hu",
-      "Daniel Gehrig",
-      "Antonio Loquercio"
-    ],
-    "published": "2026-04-08",
-    "categories": [
-      "cs.RO",
-      "cs.AI",
-      "cs.CV"
-    ],
-    "abstract": "**\n\nScaling up robot learning will likely require human data containing rich and long-horizon interactions in the wild. Existing approaches for collecting such data trade off portability, robustness to occlusion, and global consistency. We introduce RoSHI, a hybrid wearable that fuses low-cost sparse IMUs with the Project Aria glasses to estimate the full 3D pose and body shape of the wearer in a metric global coordinate frame from egocentric perception. This system is motivated by the complementarity of the two sensors: IMUs provide robustness to occlusions and high-speed motions, while egocentric SLAM anchors long-horizon motion and stabilizes upper body pose. We collect a dataset of agile activities to evaluate RoSHI. On this dataset, we generally outperform other egocentric baselines and perform comparably to a state-of-the-art exocentric baseline (SAM3D). Finally, we demonstrate that the motion data recorded from our system are suitable for real-world humanoid policy learning. For videos, data and more, visit the project webpage: https://roshi-mocap.github.io/\n\n**",
-    "analysis": {
-      "0": "",
-      "5": "*   **核心思想**：融合惯性传感器与自中心化视觉实现全场景运动捕捉。\n*   **速记版 pipeline**：\n    1. 佩戴传感器与 AprilTag 标记点；\n    2. 进行短时间视频辅助在线校准；\n    3. 利用眼镜视觉 SLAM 锁定全局位姿；\n    4. 通过扩散模型融合 IMU 数据重构全姿态。\n\n**",
-      "summary": "为了扩大机器人学习的规模，需要获取在野外环境中包含丰富且长时交互的人类数据。现有的数据采集方法在便携性、遮挡鲁棒性和全局一致性之间难以平衡。本文提出了 RoSHI，一种混合可穿戴系统，通过融合低成本稀疏 IMU 和 Project Aria 眼镜的视觉感知，在指标全局坐标系中估计穿戴者的全 3D 姿态和体型。本系统的核心在于两种传感器的互补：IMU 在遮挡和快速运动下提供鲁棒性，而自中心化 SLAM 锚定长时运动并稳定上半身姿态。通过在敏捷活动数据集上的评估，RoSHI 的表现优于其他自中心化基线，且与最先进的外中心化基线（SAM3D）相当。最后，本文证明了该系统记录的动作数据适用于现实世界的类人机器人策略学习。",
-      "method": "*   **本质区别**：不依赖外部摄像头，利用“可穿戴 + 自身视觉”构建了一个闭环的全局坐标捕捉系统。\n*   **创新贡献**：提出了一套基于 AprilTag 的视觉辅助在线校准方案，极大地提升了日常使用中配置的便利性。\n*   **适用场景**：适合需要频繁在不同场景（室内、户外、狭窄空间）进行长时敏捷运动捕捉的机器人研究领域。",
-      "experiment": "*   **验证方法**：使用 OptiTrack 系统获取 51 关节地面真值进行定量对比（MPJPE, JAE）。\n*   **关键结果**：RoSHI 在所有数据集中均达到了最低的 MPJPE，尤其是在快速运动数据集上表现稳定，且在没有任何“死角”的情况下实现了全范围动作捕捉。\n*   **优劣势**：优势在于高便携与高鲁棒性；局限在于当身体部分完全超出眼镜视线且 IMU 约束存在冲突时，可能会引入不自然的扭转伪影。",
-      "related": "*   **开源情况**：项目主页为 https://roshi-mocap.github.io/，包含代码和数据集。\n*   **实现细节**：建议在进行“视觉辅助校准”时录制 20-40 秒的自然运动视频；扩散模型的训练依赖 AMASS 数据集。\n*   **迁移可能**：该融合框架可轻松扩展到其他传感器（如力传感器、肌电传感器），只需在骨骼姿态预测中增加相应的 guidance 约束项。"
-    },
-    "keyFindings": [
-      "We introduce RoSHI, a hybrid wearable that fuses low-cost sparse IMUs with the Project Aria glasses to estimate the full 3D pose and body shape of the wearer in a metric global coordinate frame from egocentric perception.",
-      "On this dataset, we generally outperform other egocentric baselines and perform comparably to a state-of-the-art exocentric baseline (SAM3D).",
-      "Finally, we demonstrate that the motion data recorded from our system are suitable for real-world humanoid policy learning."
-    ],
-    "links": {
-      "pdf": "https://arxiv.org/pdf/2604.07331v1",
-      "arxiv": "https://arxiv.org/abs/2604.07331v1"
-    },
-    "source": "arxiv",
-    "date": "2026-04-09",
-    "narratorHint": "introduce RoSHI, a hybrid wearable that fuses low-cost sparse IMUs with the Proj."
-  },
-  {
-    "title": "CADENCE: Context-Adaptive Depth Estimation for Navigation and Computational Efficiency",
-    "url": "https://arxiv.org/abs/2604.07286v1",
-    "authors": [
-      "Timothy K Johnsen",
-      "Marco Levorato"
-    ],
-    "published": "2026-04-08",
-    "categories": [
-      "cs.RO",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "abstract": "**\n\nAutonomous vehicles deployed in remote environments typically rely on embedded processors, compact batteries, and lightweight sensors. These hardware limitations conflict with the need to derive robust representations of the environment, which often requires executing computationally intensive deep neural networks for perception. To address this challenge, we present CADENCE, an adaptive system that dynamically scales the computational complexity of a slimmable monocular depth estimation network in response to navigation needs and environmental context. By closing the loop between perception fidelity and actuation requirements, CADENCE ensures high-precision computing is only used when mission-critical. We conduct evaluations on our released open-source testbed that integrates Microsoft AirSim with an NVIDIA Jetson Orin Nano. As compared to a state-of-the-art static approach, CADENCE decreases sensor acquisitions, power consumption, and inference latency by 9.67%, 16.1%, and 74.8%, respectively. The results demonstrate an overall reduction in energy expenditure by 75.0%, along with an increase in navigation accuracy by 7.43%.\n\n**",
-    "analysis": {
-      "0": "",
-      "5": "*   **核心思想**：让载具像人类一样学会“根据任务难易度调整注意力（算力）”。\n*   **速记版 Pipeline**：\n    1.  训练一个多尺寸共享权重的主感知网络。\n    2.  利用历史观测队列构建时序感知。\n    3.  DRL 策略根据环境复杂度和任务目标，实时同步输出移动指令与算力缩放因子。\n    4.  依据缩放因子动态裁切网络通道，实现实时能耗最优。\n\n**",
-      "summary": "远程部署的自动驾驶载具通常依赖嵌入式处理器、紧凑型电池和轻量化传感器。这些硬件限制与获取鲁棒环境表示的需求相冲突，后者往往需要执行计算密集型的深度神经网络（DNN）。为了应对这一挑战，我们提出了 CADENCE，这是一种自适应系统，可根据导航需求和环境上下文动态调整可变宽度（slimmable）单目深度估计网络的计算复杂度。通过闭环感知保真度与执行需求，CADENCE 确保仅在关键任务时使用高精度计算。通过在集成 Microsoft AirSim 和 NVIDIA Jetson Orin Nano 的开源测试平台上进行评估，与最先进的静态方法相比，CADENCE 的传感器采集次数、功耗和推理延迟分别降低了 9.67%、16.1% 和 74.8%。结果表明，能量消耗总体降低了 75.0%，同时导航准确率提升了 7.43%。",
-      "method": "*   **本质区别**：CADENCE 将感知网络的计算负载视为一个可控的策略维度，而非常规的静态系统。\n*   **创新贡献**：提出了一种将“感知保真度调整”与“导航策略”紧密耦合的闭环架构；证明了在一定程度的计算缩放导致的“模糊”不仅是损失，反而可能起到类似噪声注入的正则化效果。\n*   **适用场景**：搭载轻量化板载算力（如 Jetson Nano）的无人机或地面机器人，且环境复杂度波动较大的场景。",
-      "experiment": "*   **验证方法**：基于 NVIDIA Jetson Orin Nano 的硬件在环（HIL）测试，结合 Microsoft AirSim 仿真环境。\n*   **关键结论**：CADENCE 在保持甚至略微提升导航准确率的前提下，实现了 75% 的能耗下降，证明了动态计算分配的优越性。\n*   **局限**：模型依赖特定环境的 DRL 训练，对未见过的极端地形泛化能力可能有限。",
-      "related": "*   **开源地址**：[https://github.com/WreckItTim/OmniNaviPy](https://github.com/WreckItTim/OmniNaviPy)\n*   **关键点**：\n    *   训练初期必须使用代理模型（Surrogate Models）规避仿真器高延迟。\n    *   在部署时，需针对目标嵌入式平台进行严谨的功率/延迟性能建模，以准确定义 $E(\\rho)$ 的代价函数。\n*   **迁移建议**：该方法可直接迁移至其他以 CNN 为骨干的资源受限任务（如目标检测、语义分割），只需将其适配为 Slimmable 架构并训练适配策略网络。"
-    },
-    "keyFindings": [
-      "To address this challenge, we present CADENCE, an adaptive system that dynamically scales the computational complexity of a slimmable monocular depth estimation network in response to navigation needs and environmental context.",
-      "As compared to a state-of-the-art static approach, CADENCE decreases sensor acquisitions, power consumption, and inference latency by 9.67%, 16.1%, and 74.8%, respectively."
-    ],
-    "links": {
-      "pdf": "https://arxiv.org/pdf/2604.07286v1",
-      "arxiv": "https://arxiv.org/abs/2604.07286v1"
-    },
-    "source": "arxiv",
-    "date": "2026-04-09",
-    "narratorHint": "present CADENCE, an adaptive system that dynamically scales the computational co."
-  },
-  {
-    "title": "Mem3R: Streaming 3D Reconstruction with Hybrid Memory via Test-Time Training",
-    "url": "https://arxiv.org/abs/2604.07279v1",
-    "authors": [
-      "Changkun Liu",
-      "Jiezhi Yang",
-      "Zeman Li",
-      "Yuan Deng",
-      "Jiancong Guo",
-      "Luca Ballan"
+      "Tencent Robotics X",
+      "HY Vision Team",
+      ":",
+      "Xumin Yu",
+      "Zuyan Liu",
+      "Ziyi Wang",
+      "He Zhang",
+      "Yongming Rao",
+      "Fangfu Liu",
+      "Yani Zhang",
+      "Ruowen Zhao",
+      "Oran Wang",
+      "Yves Liang",
+      "Haitao Lin",
+      "Minghui Wang",
+      "Yubo Dong",
+      "Kevin Cheng",
+      "Bolin Ni",
+      "Rui Huang",
+      "Han Hu",
+      "Zhengyou Zhang",
+      "Linus",
+      "Shunyu Yao"
     ],
     "published": "2026-04-08",
     "categories": [
       "cs.CV"
     ],
-    "abstract": "**\n\nStreaming 3D perception is well suited to robotics and augmented reality, where long visual streams must be processed efficiently and consistently. Recent recurrent models offer a promising solution by maintaining fixed-size states and enabling linear-time inference, but they often suffer from drift accumulation and temporal forgetting over long sequences due to the limited capacity of compressed latent memories. We propose Mem3R, a streaming 3D reconstruction model with a hybrid memory design that decouples camera tracking from geometric mapping to improve temporal consistency over long sequences. For camera tracking, Mem3R employs an implicit fast-weight memory implemented as a lightweight Multi-Layer Perceptron updated via Test-Time Training. For geometric mapping, Mem3R maintains an explicit token-based fixed-size state. Compared with CUT3R, this design not only significantly improves long-sequence performance but also reduces the model size from 793M to 644M parameters. Mem3R supports existing improved plug-and-play state update strategies developed for CUT3R. Specifically, integrating it with TTT3R decreases Absolute Trajectory Error by up to 39% over the base implementation on 500 to 1000 frame sequences. The resulting improvements also extend to other downstream tasks, including video depth estimation and 3D reconstruction, while preserving constant GPU memory usage and comparable inference throughput. Project page: https://lck666666.github.io/Mem3R/\n\n**",
+    "abstract": "**\n\nWe introduce HY-Embodied-0.5, a family of foundation models specifically designed for real-world embodied agents. To bridge the gap between general Vision-Language Models (VLMs) and the demands of embodied agents, our models are developed to enhance the core capabilities required by embodied intelligence: spatial and temporal visual perception, alongside advanced embodied reasoning for prediction, interaction, and planning. The HY-Embodied-0.5 suite comprises two primary variants: an efficient model with 2B activated parameters designed for edge deployment, and a powerful model with 32B activated parameters targeted for complex reasoning. To support the fine-grained visual perception essential for embodied tasks, we adopt a Mixture-of-Transformers (MoT) architecture to enable modality-specific computing. By incorporating latent tokens, this design effectively enhances the perceptual representation of the models. To improve reasoning capabilities, we introduce an iterative, self-evolving post-training paradigm. Furthermore, we employ on-policy distillation to transfer the advanced capabilities of the large model to the smaller variant, thereby maximizing the performance potential of the compact model. Extensive evaluations across 22 benchmarks, spanning visual perception, spatial reasoning, and embodied understanding, demonstrate the effectiveness of our approach. Our MoT-2B model outperforms similarly sized state-of-the-art models on 16 benchmarks, while the 32B variant achieves performance comparable to frontier models such as Gemini 3.0 Pro. In downstream robot control experiments, we leverage our robust VLM foundation to train an effective Vision-Language-Action (VLA) model, achieving compelling results in real-world physical evaluations. Code and models are open-sourced at https://github.com/Tencent-Hunyuan/HY-Embodied.\n\n**",
     "analysis": {
-      "0": "",
-      "5": "- **核心思想**：混合存储解耦相机运动与场景几何，结合在线TTT优化长时一致性。\n- **速记版pipeline**：\n    1. **特征提取**：用ViT转换图像为特征。\n    2. **快权重追踪**：用MLP在线学习并更新位姿先验。\n    3. **几何映射**：用显式状态存储全局场景。\n    4. **通道门控融合**：动态整合历史信息与新观测。\n    5. **自适应位姿更新**：根据在线预测误差实时修正追踪权重。\n\n**",
-      "summary": "流式3D感知在机器人和增强现实领域具有重要意义，需高效且一致地处理长视觉流。现有的递归模型通过维护固定大小的状态实现线性时间推理，但由于压缩潜空间内存的容量有限，在长序列中常遭遇漂移累积和时间性遗忘。我们提出了Mem3R，一种具有混合内存设计的流式3D重建模型，通过解耦相机追踪与几何映射来提升长序列的时间一致性。对于相机追踪，Mem3R采用一种轻量级多层感知机（MLP）实现的隐式快权重（fast-weight）内存，并通过测试时训练（TTT）进行更新。对于几何映射，Mem3R维护一个显式的基于Token的固定大小状态。与CUT3R相比，该设计不仅显著改善了长序列性能，还将模型参数量从793M减少至644M。",
-      "method": "- **本质区别**：与CUT3R的“单一存储”不同，Mem3R是“双系统”——利用快权重程序化地处理动态运动，利用RNN显式状态维护几何一致性。\n- **创新贡献**：\n    1. **解耦设计**：成功将运动估计与几何特征分离，降低了RNN状态的负担。\n    2. **轻量化**：通过以MLP替代部分Decoder参数，实现19%的参数缩减。\n    3. **插件式适配**：兼容CUT3R的现有训练策略，且在联合使用时性能更佳。",
-      "experiment": "- **验证方法**：在TUM Dynamics, ScanNet, KITTI, 7-Scenes等数据集上进行长期序列（最高1000帧）测试。\n- **关键结果**：Mem3R在500-1000帧序列上的绝对轨迹误差（ATE）较基线下降高达39%。\n- **优势**：长序列下的轨迹稳定性极佳，计算开销更低，显存占用更小。\n- **局限**：作为RNN变体，依然存在递归架构固有的信息压缩上限，在大规模复杂场景中仍有提升空间。",
-      "related": "- **开源情况**：已开源，项目主页：https://lck666666.github.io/Mem3R/。\n- **实现细节**：关键超参数为 decay scale ($\\gamma=0.01$) 和 base learning rate ($c_{base}=0.001$)，这些用于控制TTT更新的平滑度。\n- **迁移建议**：其核心“快权重+显式状态”的混合架构非常适合需要在线自适应的实时流式任务，不仅限于3D重建，可迁移至SLAM或长时视频理解任务。"
+      "0": "以下是对论文《HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents》的技术深度分析：",
+      "5": "- **核心思想**：通过分模态架构与强化推理机制，将数字智能翻译为物理执行能力。\n- **速记版 pipeline**：\n    1. **双模态拆分架构**（MoT 处理 vision/text）。\n    2. **大规模多维预训练**（物理+空间数据）。\n    3. **迭代自演化 RL**（奖励驱动与思维链优化）。\n    4. **大到小在线蒸馏**（对齐教师模型的认知过程）。\n\n**",
+      "summary": "本文介绍了 HY-Embodied-0.5，这是一个专为现实世界具身智能体设计的基座模型家族。为弥合通用多模态模型（VLMs）与具身任务需求间的鸿沟，我们重点提升了模型在空间/时间视觉感知及具身推理（预测、交互、规划）方面的核心能力。该模型包含两个变体：针对边缘侧部署的 2B 激活参数高效模型，以及用于复杂推理的 32B 激活参数强力模型。通过采用 Mixture-of-Transformers（MoT）架构和视觉潜空间 tokens，模型显著增强了细粒度视觉表征能力。此外，我们引入了迭代式自我演化训练范式，并利用策略蒸馏技术将大型模型的能力迁移至小型版本。在 22 个测评基准上的评估显示其性能优异，并在真实物理机器人控制任务中取得了显著成果。",
+      "method": "- **本质区别**：与通用 VLM（如 Qwen-VL）不同，HY-Embodied-0.5 将“推理过程”显式建模（即 <think> token），并在 MoT 架构中刻意保留了视觉与语言分支的独立性，以避免视觉训练破坏语言能力。\n- **创新贡献**：成功将“深度思维”与“视觉感知”结合，在 2B 参数量级下实现了与更大模型匹敌的 embodied 能力。\n- **适用场景**：机器人导航、操作规划、物理空间交互、视觉问答。",
+      "experiment": "- **验证方法**：在 22 个感知、空间推理和具身理解基准上与主流 SOTA 模型对比，并进行了真实机器人操作实验。\n- **关键结果**：MoT-2B 在 16/22  benchmark 上领先同规模模型；MoE-A32B 在整体得分上超过 Gemini 3.0 Pro。\n- **局限性**：对极高分辨率的动态环境实时处理可能仍受限于推理速度。",
+      "related": "- **开源情况**：已开源，GitHub 地址：`https://github.com/Tencent-Hunyuan/HY-Embodied`。\n- **实现细节**：在训练阶段注意关闭 sequence packing 以保证推理链路独立；在 RL 阶段使用 GRPO 算法以节省内存并提高稳定性。\n- **迁移可能**：MoT 架构可轻松迁移至需要处理多模态不平衡（如图像 tokens 占比极高）的任务中。"
     },
     "keyFindings": [
-      "We propose Mem3R, a streaming 3D reconstruction model with a hybrid memory design that decouples camera tracking from geometric mapping to improve temporal consistency over long sequences."
+      "We introduce HY-Embodied-0.5, a family of foundation models specifically designed for real-world embodied agents.",
+      "To improve reasoning capabilities, we introduce an iterative, self-evolving post-training paradigm.",
+      "Extensive evaluations across 22 benchmarks, spanning visual perception, spatial reasoning, and embodied understanding, demonstrate the effectiveness of our approach.",
+      "Our MoT-2B model outperforms similarly sized state-of-the-art models on 16 benchmarks, while the 32B variant achieves performance comparable to frontier models such as Gemini 3.0 Pro."
     ],
     "links": {
-      "pdf": "https://arxiv.org/pdf/2604.07279v1",
-      "arxiv": "https://arxiv.org/abs/2604.07279v1"
+      "pdf": "https://arxiv.org/pdf/2604.07430v1",
+      "arxiv": "https://arxiv.org/abs/2604.07430v1"
     },
     "source": "arxiv",
-    "date": "2026-04-09",
-    "narratorHint": "propose Mem3R, a streaming 3D reconstruction model with a hybrid memory design t."
+    "date": "2026-04-10",
+    "narratorHint": "model with 2B activated parameters designed for edge deployment, and a powerful ."
   },
   {
-    "title": "GenLCA: 3D Diffusion for Full-Body Avatars from In-the-Wild Videos",
-    "url": "https://arxiv.org/abs/2604.07273v1",
+    "title": "GaussiAnimate: Reconstruct and Rig Animatable Categories with Level of Dynamics",
+    "url": "https://arxiv.org/abs/2604.08547v1",
     "authors": [
-      "Yiqian Wu",
-      "Rawal Khirodkar",
-      "Egor Zakharov",
-      "Timur Bagautdinov",
-      "Lei Xiao",
-      "Zhaoen Su",
-      "Shunsuke Saito",
-      "Xiaogang Jin",
-      "Junxuan Li"
+      "Jiaxin Wang",
+      "Dongxin Lyu",
+      "Zeyu Cai",
+      "Zhiyang Dou",
+      "Cheng Lin",
+      "Anpei Chen",
+      "Yuliang Xiu"
     ],
-    "published": "2026-04-08",
+    "published": "2026-04-09",
     "categories": [
-      "cs.CV"
-    ],
-    "abstract": "**\n\nWe present GenLCA, a diffusion-based generative model for generating and editing photorealistic full-body avatars from text and image inputs. The generated avatars are faithful to the inputs, while supporting high-fidelity facial and full-body animations. The core idea is a novel paradigm that enables training a full-body 3D diffusion model from partially observable 2D data, allowing the training dataset to scale to millions of real-world videos. This scalability contributes to the superior photorealism and generalizability of GenLCA. Specifically, we scale up the dataset by repurposing a pretrained feed-forward avatar reconstruction model as an animatable 3D tokenizer, which encodes unstructured video frames into structured 3D tokens. However, most real-world videos only provide partial observations of body parts, resulting in excessive blurring or transparency artifacts in the 3D tokens. To address this, we propose a novel visibility-aware diffusion training strategy that replaces invalid regions with learnable tokens and computes losses only over valid regions. We then train a flow-based diffusion model on the token dataset, inherently maintaining the photorealism and animatability provided by the pretrained avatar reconstruction model. Our approach effectively enables the use of large-scale real-world video data to train a diffusion model natively in 3D. We demonstrate the efficacy of our method through diverse and high-fidelity generation and editing results, outperforming existing solutions by a large margin. The project page is available at https://onethousandwu.com/GenLCA-Page.\n\n**",
-    "analysis": {
-      "0": "作为计算机视觉领域的专家，我对 **GenLCA** 这篇论文的分析如下：",
-      "1": "GenLCA 提出了一种基于扩散模型（Diffusion Model）的全身 3D 虚拟人生成框架，实现了从文本或图像输入到高保真、可动画化 3D 化身的生成。该工作的核心突破在于建立了一套**从非结构化“野生”（in-the-wild）视频训练 3D 扩散模型**的新范式，成功解决了大规模真实场景数据中观测不完整带来的伪影问题，从而实现了在保真度和泛化性上的跨越。",
-      "method": "*   **3D Tokenizer 转换：** 该方法巧妙地将预训练的单帧 3D 虚拟人重建模型转化为“3D Tokenizer”，将非结构化的 2D 视频帧转换为结构化的 3D Tokens，使得扩散模型能够直接在 3D 空间进行训练。\n*   **可见性感知（Visibility-aware）的扩散训练：** 针对“野生”视频常见的遮挡和缺失问题，论文提出了一种创新策略：将不可见区域替换为可学习的 Token，并仅对有效区域计算损失。这种设计有效避免了因数据缺失导致的模糊和透明伪影，保证了 3D 表征的质量。\n*   **流式扩散架构（Flow-based Diffusion）：** 训练一个原生 3D 空间的流式扩散模型，使其既能继承预训练模型的高保真度和动画能力，又能利用海量真实数据提升泛化能力。",
-      "impact": "*   **元宇宙与数字人：** 极大地降低了高保真全身体感数字人的制作成本，可应用于虚拟偶像、AI 助理等。\n*   **电影与游戏制作：** 支持从文本直接生成特定角色并支持后续的动作重定向（Retargeting），缩短影视后期制作周期。\n*   **增强现实（AR）与混合现实（MR）：** 由于生成的化身具有高质量的 3D 结构，非常适合在空间计算设备中进行实时渲染和交互。\n*   **视频编辑与特效：** 文中提到的“编辑”能力暗示了该模型在视频中替换人物或改变角色表现形式方面的巨大潜力。",
-      "limitations": "*   **对预训练模型的依赖：** 整个框架的上限在很大程度上取决于所使用的“预训练 3D Tokenizer”的质量。如果基础重建模型在复杂遮挡或极端姿态下表现不佳，可能会限制生成的稳定性。\n*   **推理成本与计算负载：** 虽然训练利用了大规模视频，但 3D 扩散模型的推理往往伴随较高的计算量，要在实时场景（如实时交互数字人）中应用，可能还需要进一步的轻量化处理。\n*   **时序一致性（Temporal Consistency）：** 虽然论文强调了动画能力，但如何在长视频或连续生成中保证 3D 化身在时间维度上的平滑性（无抖动）始终是 3D 生成式模型的挑战。\n\n**总结：**\nGenLCA 的亮点在于其**“数据工程与生成式模型设计的完美结合”**。它通过巧妙的掩码机制（Visibility-aware tokens）让“脏数据”变得可用，这是该论文能够超越现有方案的关键，也是其在 3D 生成领域具有高度创新性的地方。\n\n**"
-    },
-    "keyFindings": [
-      "We present GenLCA, a diffusion-based generative model for generating and editing photorealistic full-body avatars from text and image inputs.",
-      "The core idea is a novel paradigm that enables training a full-body 3D diffusion model from partially observable 2D data, allowing the training dataset to scale to millions of real-world videos.",
-      "To address this, we propose a novel visibility-aware diffusion training strategy that replaces invalid regions with learnable tokens and computes losses only over valid regions.",
-      "Our approach effectively enables the use of large-scale real-world video data to train a diffusion model natively in 3D.",
-      "We demonstrate the efficacy of our method through diverse and high-fidelity generation and editing results, outperforming existing solutions by a large margin."
-    ],
-    "links": {
-      "pdf": "https://arxiv.org/pdf/2604.07273v1",
-      "arxiv": "https://arxiv.org/abs/2604.07273v1"
-    },
-    "source": "arxiv",
-    "date": "2026-04-09",
-    "narratorHint": "present GenLCA, a diffusion-based generative model for generating and editing ph."
-  },
-  {
-    "title": "BATON: A Multimodal Benchmark for Bidirectional Automation Transition Observation in Naturalistic Driving",
-    "url": "https://arxiv.org/abs/2604.07263v1",
-    "authors": [
-      "Yuhang Wang",
-      "Yiyao Xu",
-      "Chaoyun Yang",
-      "Lingyao Li",
-      "Jingran Sun",
-      "Hao Zhou"
-    ],
-    "published": "2026-04-08",
-    "categories": [
-      "cs.HC",
       "cs.CV",
-      "cs.MM"
+      "cs.GR"
     ],
-    "abstract": "**\n\nExisting driving automation (DA) systems on production vehicles rely on human drivers to decide when to engage DA while requiring them to remain continuously attentive and ready to intervene. This design demands substantial situational judgment and imposes significant cognitive load, leading to steep learning curves, suboptimal user experience, and safety risks from both over-reliance and delayed takeover. Predicting when drivers hand over control to DA and when they take it back is therefore critical for designing proactive, context-aware HMI, yet existing datasets rarely capture the multimodal context, including road scene, driver state, vehicle dynamics, and route environment. To fill this gap, we introduce BATON, a large-scale naturalistic dataset capturing real-world DA usage across 127 drivers, and 136.6 hours of driving. The dataset synchronizes front-view video, in-cabin video, decoded CAN bus signals, radar-based lead-vehicle interaction, and GPS-derived route context, forming a closed-loop multimodal record around each control transition. We define three benchmark tasks: driving action understanding, handover prediction, and takeover prediction, and evaluate baselines spanning sequence models, classical classifiers, and zero-shot VLMs. Results show that visual input alone is insufficient for reliable transition prediction: front-view video captures road context but not driver state, while in-cabin video reflects driver readiness but not the external scene. Incorporating CAN and route-context signals substantially improves performance over video-only settings, indicating strong complementarity across modalities. We further find takeover events develop more gradually and benefit from longer prediction horizons, whereas handover events depend more on immediate contextual cues, revealing an asymmetry with direct implications for HMI design in assisted driving systems.\n\n**",
+    "abstract": "**\n\nFree-form bones, that conform closely to the surface, can effectively capture non-rigid deformations, but lack a kinematic structure necessary for intuitive control. Thus, we propose a Scaffold-Skin Rigging System, termed \"Skelebones\", with three key steps: (1) Bones: compress temporally-consistent deformable Gaussians into free-form bones, approximating non-rigid surface deformations; (2) Skeleton: extract a Mean Curvature Skeleton from canonical Gaussians and refine it temporally, ensuring a category-agnostic, motion-adaptive, and topology-correct kinematic structure; (3) Binding: bind the skeleton and bones via non-parametric partwise motion matching (PartMM), synthesizing novel bone motions by matching, retrieving, and blending existing ones. Collectively, these three steps enable us to compress the Level of Dynamics of 4D shapes into compact skelebones that are both controllable and expressive. We validate our approach on both synthetic and real-world datasets, achieving significant improvements in reanimation performance across unseen poses-with 17.3% PSNR gains over Linear Blend Skinning (LBS) and 21.7% over Bag-of-Bones (BoB)-while maintaining excellent reconstruction fidelity, particularly for characters exhibiting complex non-rigid surface dynamics. Our Partwise Motion Matching algorithm demonstrates strong generalization to both Gaussian and mesh representations, especially under low-data regime (~1000 frames), achieving 48.4% RMSE improvement over robust LBS and outperforming GRU- and MLP-based learning methods by >20%. Code will be made publicly available for research purposes at cookmaker.cn/gaussianimate.\n\n**",
     "analysis": {
-      "0": "",
-      "5": "*   **核心思想**：利用多模态时序互补实现人机控制转换预测。\n*   **速记版pipeline**：\n    1. 同步采集路况视频与车辆信号；\n    2. 提取视频特征并对齐结构化数据；\n    3. 分支网络编码各模态时序特征；\n    4. 门控融合多模态上下文预测转换。\n\n**",
-      "summary": "现有生产车辆上的驾驶自动化（DA）系统依赖人类驾驶员决定何时启动自动化，并要求其保持持续关注以备随时接管。这种设计不仅要求高水平的态势感知，还带来了沉重的认知负荷，导致学习曲线陡峭、用户体验不佳，并引发过度依赖或延迟接管的安全风险。因此，预测驾驶员何时将控制权移交给自动化系统以及何时收回控制权，对于设计主动式、具备环境感知能力的人机界面（HMI）至关重要。然而，现有数据集很少捕获包括路况、驾驶员状态、车辆动力学和路线环境在内的多模态背景。为了填补这一空白，我们引入了BATON，这是一个大规模的自然驾驶数据集，记录了380条路线、127名驾驶员和136.6小时的驾驶数据。该数据集同步了前视视频、车内视频、解码的CAN总线信号、雷达探测和GPS路线信息，形成了围绕每次控制转换的闭环多模态记录。我们定义了三大基准任务：驾驶动作理解、移交预测和接管预测，并评估了序列模型、经典分类器和零样本视觉-语言模型的基线。结果表明，仅靠视觉输入不足以实现可靠的转换预测：前视视频能捕获道路环境但无法反映驾驶员状态，而车内视频反映了驾驶员准备情况却缺失外部场景信息。结合结构化的车辆和路线上下文信号可显著提高性能。此外，我们发现接管事件的发展过程更具渐进性且受益于更长的预测窗口，而移交事件则更依赖于即时上下文线索，这一不对称性对辅助驾驶系统中的HMI设计具有直接影响。\n\n---",
-      "method": "*   **本质区别**：与现有研究不同，BATON将驾驶员“主动交给系统”和“被动/主动接管控制”视为一个统一的 bidirectional 问题，且强调真实世界数据的主权性。\n*   **创新贡献**：提出了一套基于真实道路、完全同步的多模态基准，并揭示了移交与接管在时序特征上的不对称性（接管更需长时记忆，移交更依赖即时上下文）。\n*   **适用场景**：适用于L2级辅助驾驶的交互建模、驾驶意图预测及主动HMI系统的开发。\n\n---",
-      "experiment": "*   **关键结果**：多模态输入在各项任务中均显著优于单模态；Temporal Context（历史时序信息）对于任务预测至关重要。\n*   **主要优势**：提供了目前最全面的双向转换基准，验证了跨模态互补的必要性。\n*   **主要局限**：模型对部分边缘工况的预测能力有限，目前基线模型主要依赖于相对基础的序列架构，仍有巨大的优化空间。\n\n---",
-      "related": "*   **开源情况**：基准代码与数据处理脚本已开源（GitHub）；raw数据通过HuggingFace受控访问。\n*   **实现细节**：建议使用门控残差融合（Gated Residual Fusion）以平衡异构模态权重；在预处理阶段，务必通过PCA对视频特征降维，避免原始图像特征维度过高干扰非视觉信号的训练。\n*   **迁移可能**：该框架可直接迁移至预测驾驶员疲劳、注意力分配监测等相关任务。\n\n---"
+      "0": "以下是对《GaussiAnimate》论文的方法论分析与总结：",
+      "5": "- **核心思想**：通过解耦层级动态，以运动匹配实现高保真度的可控形变。\n- **速记版 Pipeline**：\n    1. 聚类压缩高斯形成“自由骨骼”；\n    2. 梯度分析提取“层级骨架”；\n    3. 匹配骨架片段合成“骨骼运动”。\n\n**",
+      "summary": "自由形式的骨骼（Free-form bones）虽能紧贴表面有效捕捉非刚性形变，却缺乏直观控制所需的运动学结构。为此，我们提出了一种名为“Skelebones”的支架皮肤绑定系统，包含三个关键步骤：（1）**骨骼**：将时间一致性的可形变高斯（Gaussians）压缩为自由形式骨骼，以逼近非刚性表面形变；（2）**骨架**：从规范空间的高斯中提取平均曲率骨架，并进行时间上的精细化，确保其具备类别无关性、运动自适应性及拓扑正确性；（3）**绑定**：通过非参数化的分部运动匹配（PartMM）将骨架与骨骼连接，合成新的骨骼运动。",
+      "method": "- **本质区别**：与传统依赖单一骨架（Template-based）或单纯自由块（Bag-of-Bones）的方法不同，本文引入了“骨架驱动骨骼”的层级结构，且采用非参数化的运动匹配代替了端到端的权重训练。\n- **创新贡献**：解耦了建模与动画过程，实现了无需预定义模板（Template-free）的通用化绑定。",
+      "experiment": "- **关键结论**：在 DNA-Rendering 和 ActorHQ 数据集上，该方法比 LBS 和 BoB 分别有 17.3% 和 45.6% 的 PSNR 提升，且在低数据量条件下（约 1000 帧）表现出极强的泛化能力。\n- **优势**：极佳的运行效率（绑定阶段仅需 2 分钟），对不同实体（人类、动物、服装）具有高度通用性。\n- **局限**：目前尚未达到实时渲染速度；对于极其复杂的衣物（如裙子），髋部关节位置有时会偏离解剖结构。",
+      "related": "- **开源地址**：[cookmaker.cn/gaussianimate](http://cookmaker.cn/gaussianimate)\n- **关键注意事项**：\n    - 数据集需要先进行 temporally-consistent 的 4D 高斯重建（如使用 SC-GS）。\n    - 骨架提取对 SSDR 的质量极度敏感，必须保证 ARAP 约束有效。\n    - 若要迁移至其他任务，需构建高质量的运动 patches 数据库（KVQ 检索的性能直接决定生成质量）。"
     },
     "keyFindings": [
-      "To fill this gap, we introduce BATON, a large-scale naturalistic dataset capturing real-world DA usage across 127 drivers, and 136.6 hours of driving.",
-      "We define three benchmark tasks: driving action understanding, handover prediction, and takeover prediction, and evaluate baselines spanning sequence models, classical classifiers, and zero-shot VLMs. Results show that visual input alone is insufficient for reliable transition prediction: front-view video captures road context but not driver state, while in-cabin video reflects driver readiness but not the external scene."
+      "Thus, we propose a Scaffold-Skin Rigging System, termed \"Skelebones\", with three key steps: (1) Bones: compress temporally-consistent deformable Gaussians into free-form bones, approximating non-rigid surface deformations; (2) Skeleton: extract a Mean Curvature Skeleton from canonical Gaussians and refine it temporally, ensuring a category-agnostic, motion-adaptive, and topology-correct kinematic structure; (3) Binding: bind the skeleton and bones via non-parametric partwise motion matching (PartMM), synthesizing novel bone motions by matching, retrieving, and blending existing ones.",
+      "We validate our approach on both synthetic and real-world datasets, achieving significant improvements in reanimation performance across unseen poses-with 17.3% PSNR gains over Linear Blend Skinning (LBS) and 21.7% over Bag-of-Bones (BoB)-while maintaining excellent reconstruction fidelity, particularly for characters exhibiting complex non-rigid surface dynamics."
     ],
     "links": {
-      "pdf": "https://arxiv.org/pdf/2604.07263v1",
-      "arxiv": "https://arxiv.org/abs/2604.07263v1"
+      "pdf": "https://arxiv.org/pdf/2604.08547v1",
+      "arxiv": "https://arxiv.org/abs/2604.08547v1"
     },
     "source": "arxiv",
-    "date": "2026-04-09",
-    "narratorHint": "introduce BATON, a large-scale naturalistic dataset capturing real-world DA usag."
+    "date": "2026-04-10",
+    "narratorHint": "propose a Scaffold-Skin Rigging System, termed \"Skelebones\", with three key step."
   },
   {
-    "title": "Geo-EVS: Geometry-Conditioned Extrapolative View Synthesis for Autonomous Driving",
-    "url": "https://arxiv.org/abs/2604.07250v1",
+    "title": "When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models",
+    "url": "https://arxiv.org/abs/2604.08546v1",
     "authors": [
-      "Yatong Lan",
-      "Rongkui Tang",
-      "Lei He"
+      "Zhengyang Sun",
+      "Yu Chen",
+      "Xin Zhou",
+      "Xiaofan Li",
+      "Xiwu Chen",
+      "Dingkang Liang",
+      "Xiang Bai"
     ],
-    "published": "2026-04-08",
+    "published": "2026-04-09",
     "categories": [
       "cs.CV"
     ],
-    "abstract": "**\n\nExtrapolative novel view synthesis can reduce camera-rig dependency in autonomous driving by generating standardized virtual views from heterogeneous sensors. Existing methods degrade outside recorded trajectories because extrapolated poses provide weak geometric support and no dense target-view supervision. The key is to explicitly expose the model to out-of-trajectory condition defects during training. We propose Geo-EVS, a geometry-conditioned framework under sparse supervision. Geo-EVS has two components. Geometry-Aware Reprojection (GAR) uses fine-tuned VGGT to reconstruct colored point clouds and reproject them to observed and virtual target poses, producing geometric condition maps. This design unifies the reprojection path between training and inference. Artifact-Guided Latent Diffusion (AGLD) injects reprojection-derived artifact masks during training so the model learns to recover structure under missing support. For evaluation, we use a LiDAR-Projected Sparse-Reference (LPSR) protocol when dense extrapolated-view ground truth is unavailable. On Waymo, Geo-EVS improves sparse-view synthesis quality and geometric accuracy, especially in high-angle and low-coverage settings. It also improves downstream 3D detection.\n\n**",
+    "abstract": "**\n\nText-to-video diffusion models have enabled open-ended video synthesis, but often struggle with generating the correct number of objects specified in a prompt. We introduce NUMINA , a training-free identify-then-guide framework for improved numerical alignment. NUMINA identifies prompt-layout inconsistencies by selecting discriminative self- and cross-attention heads to derive a countable latent layout. It then refines this layout conservatively and modulates cross-attention to guide regeneration. On the introduced CountBench, NUMINA improves counting accuracy by up to 7.4% on Wan2.1-1.3B, and by 4.9% and 5.5% on 5B and 14B models, respectively. Furthermore, CLIP alignment is improved while maintaining temporal consistency. These results demonstrate that structural guidance complements seed search and prompt enhancement, offering a practical path toward count-accurate text-to-video diffusion. The code is available at https://github.com/H-EmbodVis/NUMINA.\n\n**",
     "analysis": {
-      "0": "",
-      "5": "*   **核心思想**：通过引入重投影缺陷先验，将外推合成分解为有损条件下的图像结构补全。\n*   **速记版pipeline**：\n    1. 提取单帧点云特征。\n    2. 生成带缺失孔洞的重投影条件图。\n    3. 训练时人为混入伪影掩码强化模型鲁棒性。\n    4. 推理时利用学习到的生成先验完成缺失结构补全。\n\n**",
-      "summary": "外推式新视角合成可以通过利用异构传感器生成标准化的虚拟视图，从而降低自动驾驶对特定相机阵列配置的依赖。现有的方法在脱离原始轨迹时性能显著下降，因为外推的位姿缺乏几何支持且目标视角缺乏密集的监督。为了解决这一问题，我们提出了**Geo-EVS**，这是一个在稀疏监督下进行的几何条件化生成框架。Geo-EVS包含两个核心组件：**几何感知重投影 (GAR)** 利用精调的VGGT模型重建彩色点云，并将其重投影到目标位姿以产生几何条件图，从而统一了训练和推理的重投影路径；**人工制品引导的潜在扩散 (AGLD)** 在训练过程中注入重投影产生的伪影掩码，强制模型学习在缺乏支持的情况下恢复结构。针对缺乏密集地面真值的问题，我们建立了**LiDAR投影稀疏参考 (LPSR)** 评估协议。在Waymo数据集上的实验表明，Geo-EVS在稀疏视角合成和几何一致性方面具有显著优势，并能提升下游3D检测性能。",
-      "method": "*   **本质区别**：从传统的“基于给定几何生成图像”转向“基于带有确定性缺失模式的几何进行鲁棒结构补全”。\n*   **创新贡献**：统一了训练与推理的几何重投影接口（GAR），并引入了显式的伪影掩码注入机制（Artifact-Aware Training）。\n*   **适用场景**：自动驾驶中需要从已知相机视图合成任意虚拟视角（如更换传感器布局或侧向延伸视野）的场景。",
-      "experiment": "*   **验证方法**：使用LPSR协议，仅在LiDAR点云覆盖的有效像素上进行误差统计。\n*   **关键结果**：在Waymo外推任务中，Geo-EVS的Sparse-PSNR和SSIM均显著优于3DGS、EmerNeRF及FreeVS。\n*   **主要优势**：极强的几何一致性，即便在大的位姿外推下也不会出现严重的结构崩坏，且能直接提升BEVFormer等下游检测器的mAP指标。\n*   **主要局限**：对极度动态的物体（运动一致性缺失）和极端稀疏区域（<5%点云覆盖）的处理仍存在物理 hallucination（幻觉）。",
-      "related": "*   **开源/实现**：基于潜在扩散模型（如Stable Diffusion框架）。关键在于需要预先计算并构建一个“伪影掩码库”（Artifact Mask Library），这由深度、视野范围和Z-buffer可见性决定。\n*   **实现细节**：建议使用AdamW优化器，学习率设为1e-4，推理阶段采用30步去噪，无分类器引导（CFG）刻度设为1.5。\n*   **迁移建议**：该架构可以轻松迁移到任何具有激光雷达点云辅助的机器人视觉任务中，只需替换GAR中的特征提取器即可。"
+      "0": "以下是对论文《When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models》的深度技术分析：",
+      "5": "*   **核心思想**：通过挖掘预训练注意力图的实例特征，实现无训练的视频数值一致性布局控制。\n*   **速记版Pipeline**：\n    1. **挑选注意力头**：自动找到能区分物体的注意力图。\n    2. **构建布局图**：聚类生成物体掩码，识别当前实例计数。\n    3. **修正计数误差**：增减掩码区域以对齐目标数字。\n    4. **增强生成引导**：利用掩码在重生成时对注意力进行加减压。\n\n**",
+      "summary": "文本到视频（T2V）生成模型在处理提示词中指定的对象数量时常面临困难。我们提出了NUMINA，一个训练免费的“识别-引导”框架，用于改善数值对齐。NUMINA通过选择判别性自注意力和交叉注意力头来识别提示词与布局之间的不一致，从而推导出可数的潜在布局。随后，它通过保守地细化该布局并调制交叉注意力来引导视频的重生成。在CountBench基准测试中，NUMINA在Wan2.1-1.3B上将计数准确率提升了7.4%，并在5B和14B模型上分别提升了4.9%和5.5%。该方法在保持视觉布局和时间连贯性的同时提升了CLIP对齐效果，为实现高准确度的T2V生成提供了一条实用路径。",
+      "method": "*   **本质区别**：与需要训练或依赖辅助模型（如GroundingDINO）的方案不同，NUMINA完全基于预训练模型自身的内在特征进行训练免费（Training-free）干预。\n*   **创新贡献**：提出了一套基于注意力图的自动布局提取与修正流水线，将隐式的“数值语义”转化为了显式的“空间约束”。\n*   **适用场景**：适用于任何基于Transformer架构的T2V生成模型（如Wan, CogVideoX等），对于复杂场景的计数一致性具有显著改进效果。",
+      "experiment": "*   **核心结论**：在CountBench上，NUMINA全线显著提升了计数准确率。特别是在1.3B等较小模型上，其表现甚至超越了基准更大的模型。\n*   **主要优势**：不仅大幅提升了计数准确度，且在时间连贯性（TC）和CLIP语义对齐上亦有改善，证明了该方法并未破坏视频的原有质量。\n*   **主要局限**：当模型对物体的注意力过于集中在细微局部（如鹦鹉头）时，会导致过分割，产生计数错误。",
+      "related": "*   **开源情况**：代码已开源（https://github.com/H-EmbodVis/NUMINA）。\n*   **实现细节**：关键超参数包括参考时间步 $t^\\star=20$ 和层索引 $\\ell^\\star=15$。迁移至其他模型时，需重点通过注意力分解策略将多模态注意力模块适配为自注意力和交叉注意力。\n*   **迁移建议**：该方法逻辑通用，可直接适配到任何基于DiT架构的生成任务中，重点在于如何根据具体架构微调注意力头的选择策略。"
     },
     "keyFindings": [
-      "Extrapolative novel view synthesis can reduce camera-rig dependency in autonomous driving by generating standardized virtual views from heterogeneous sensors.",
-      "We propose Geo-EVS, a geometry-conditioned framework under sparse supervision."
+      "We introduce NUMINA , a training-free identify-then-guide framework for improved numerical alignment."
     ],
     "links": {
-      "pdf": "https://arxiv.org/pdf/2604.07250v1",
-      "arxiv": "https://arxiv.org/abs/2604.07250v1"
+      "pdf": "https://arxiv.org/pdf/2604.08546v1",
+      "arxiv": "https://arxiv.org/abs/2604.08546v1"
     },
     "source": "arxiv",
-    "date": "2026-04-09",
-    "narratorHint": "model to out-of-trajectory condition defects during training."
+    "date": "2026-04-10",
+    "narratorHint": "introduce NUMINA , a training-free identify-then-guide framework for improved nu."
+  },
+  {
+    "title": "E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation",
+    "url": "https://arxiv.org/abs/2604.08543v1",
+    "authors": [
+      "Mayur Deshmukh",
+      "Hiroyasu Akada",
+      "Helge Rhodin",
+      "Christian Theobalt",
+      "Vladislav Golyanik"
+    ],
+    "published": "2026-04-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "abstract": "**\n\nEvent cameras offer multiple advantages in monocular egocentric 3D human pose estimation from head-mounted devices, such as millisecond temporal resolution, high dynamic range, and negligible motion blur. Existing methods effectively leverage these properties, but suffer from low 3D estimation accuracy, insufficient in many applications (e.g., immersive VR/AR). This is due to the design not being fully tailored towards event streams (e.g., their asynchronous and continuous nature), leading to high sensitivity to self-occlusions and temporal jitter in the estimates. This paper rethinks the setting and introduces E-3DPSM, an event-driven continuous pose state machine for event-based egocentric 3D human pose estimation. E-3DPSM aligns continuous human motion with fine-grained event dynamics; it evolves latent states and predicts continuous changes in 3D joint positions associated with observed events, which are fused with direct 3D human pose predictions, leading to stable and drift-free final 3D pose reconstructions. E-3DPSM runs in real-time at 80 Hz on a single workstation and sets a new state of the art in experiments on two benchmarks, improving accuracy by up to 19% (MPJPE) and temporal stability by up to 2.7x. See our project page for the source code and trained models.\n\n**",
+    "analysis": {
+      "4": "- **核心思想**：利用事件流演化的隐状态，通过卡尔曼滤波实现鲁棒的3D姿态融合。\n- **速记版pipeline**：\n  1. 事件面（LNES）特征提取\n  2. 预测绝对姿态与相对位移（Delta）\n  3. 神经卡尔曼滤波自适应融合\n  4. 输出漂移校正后的稳定姿态序列\n\n**",
+      "summary": "事件相机在单目自中心（Egocentric）3D人体姿态估计中具有高时间分辨率、高动态范围和极少运动模糊等优势，但现有方法在精度和稳定性上仍显不足。这主要是因为现有设计并未充分利用事件流的异步连续特性，导致对遮挡敏感且估计结果存在抖动。本文提出了 **E-3DPSM**，一种用于事件驱动的连续姿态状态机。E-3DPSM 将连续的人体运动与事件动态对齐，通过演化潜在状态来预测3D关节位置的变化（delta pose），并与直接的3D姿态预测相融合，从而实现稳定、无漂移的3D重建。该方法在两个基准测试上达到了新的技术领先水平，MPJPE提升高达19%，时间稳定性提升至2.7倍，且能以80Hz实时运行。",
+      "method": "- **本质区别**：从“帧到帧”的独立推理转化为“状态演化”的连续跟踪，不再依赖中间件（如分割掩码或热图）。\n- **创新贡献**：引入神经卡尔曼滤波器自适应调节置信度；将运动增量作为姿态更新的一等公民。\n- **适用场景**：适用于高速、高遮挡、低光照等极端运动捕捉场景，尤其适合头戴式设备。",
+      "experiment": "- **验证方法**：在EE3D-R和EE3D-W数据集上进行了广泛对比，重点对比了基线（EventEgo3D/++）及RGB基线。\n- **关键结论**：MPJPE大幅下降，尤其是下肢和被遮挡关节的精度提升明显；在噪声干扰下稳定性（esmooth）提升2.7倍。\n- **局限性**：在极强遮挡和极端复杂环境下（如多人干扰）仍存在偶尔的跟踪丢失，依赖于模型对运动先验的准确预测。",
+      "related": "- **开源情况**：项目主页已提供代码和模型（参考论文脚注）。\n- **实现细节**：\n  - **S5 Layer**：利用状态空间模型的卷积特性并行训练，因果模式进行推理。\n  - **数据预处理**：使用20ms的LNES窗口，保持训练序列长度 $N=40$。\n  - **训练策略**：无需预训练合成数据，端到端优化Loss组合（包括Delta、绝对姿态、骨骼长度、方向Loss）。\n- **迁移可能**：SSM+卡尔曼融合架构可直接迁移至任何时序序列估计任务，如SLAM中的轨迹估计或手势跟踪。"
+    },
+    "keyFindings": [
+      "E-3DPSM runs in real-time at 80 Hz on a single workstation and sets a new state of the art in experiments on two benchmarks, improving accuracy by up to 19% (MPJPE) and temporal stability by up to 2.7x."
+    ],
+    "links": {
+      "pdf": "https://arxiv.org/pdf/2604.08543v1",
+      "arxiv": "https://arxiv.org/abs/2604.08543v1"
+    },
+    "source": "arxiv",
+    "date": "2026-04-10",
+    "narratorHint": "leverage these properties, but suffer from low 3D estimation accuracy, insuffici."
+  },
+  {
+    "title": "Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction",
+    "url": "https://arxiv.org/abs/2604.08542v1",
+    "authors": [
+      "Tao Xie",
+      "Peishan Yang",
+      "Yudong Jin",
+      "Yingfeng Cai",
+      "Wei Yin",
+      "Weiqiang Ren",
+      "Qian Zhang",
+      "Wei Hua",
+      "Sida Peng",
+      "Xiaoyang Guo",
+      "Xiaowei Zhou"
+    ],
+    "published": "2026-04-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "abstract": "**\n\nThis paper addresses the task of large-scale 3D scene reconstruction from long video sequences. Recent feed-forward reconstruction models have shown promising results by directly regressing 3D geometry from RGB images without explicit 3D priors or geometric constraints. However, these methods often struggle to maintain reconstruction accuracy and consistency over long sequences due to limited memory capacity and the inability to effectively capture global contextual cues. In contrast, humans can naturally exploit the global understanding of the scene to inform local perception. Motivated by this, we propose a novel neural global context representation that efficiently compresses and retains long-range scene information, enabling the model to leverage extensive contextual cues for enhanced reconstruction accuracy and consistency. The context representation is realized through a set of lightweight neural sub-networks that are rapidly adapted during test time via self-supervised objectives, which substantially increases memory capacity without incurring significant computational overhead. The experiments on multiple large-scale benchmarks, including the KITTI Odometry~\\cite{Geiger2012CVPR} and Oxford Spires~\\cite{tao2025spires} datasets, demonstrate the effectiveness of our approach in handling ultra-large scenes, achieving leading pose accuracy and state-of-the-art 3D reconstruction accuracy while maintaining efficiency. Code is available at https://zju3dv.github.io/scal3r.\n\n**",
+    "analysis": {
+      "0": "作为计算机视觉领域的专家，我对这篇题为 **《Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction》** 的论文分析如下：",
+      "1": "该论文针对长视频序列进行大规模3D场景重建时，现有前馈模型（feed-forward models）难以保持长时一致性和全局几何准确性的难题，提出了一种基于神经全局上下文表示的测试时训练（Test-Time Training, TTT）框架。通过引入一组轻量级的、可在测试阶段通过自监督目标快速适应的神经网络，该方法显著提升了模型处理大规模场景的能力，实现了精度与计算效率的平衡。",
+      "method": "*   **神经全局上下文表示 (Neural Global Context Representation)：** 不同于以往仅依赖局部特征匹配或直接回归的方法，Scal3R 利用一组轻量级神经网络作为“记忆库”，将长序列中的全局场景信息进行压缩与持久化存储。\n*   **高效的测试时训练 (Scalable TTT)：** 模型不仅仅依赖推理阶段的权重，而是通过引入自监督目标函数，允许模型在推理时动态微调这些轻量级子网络。这种机制解决了传统模型无法捕捉全局上下文的瓶颈，同时避免了全量微调带来的巨大计算开销。\n*   **架构解耦：** 将全局场景信息的捕捉与局部几何重建解耦，使得模型既能处理超大规模场景，又能保持单帧重建的高效性。",
+      "impact": "*   **自动驾驶 (Autonomous Driving)：** 对于需要实时处理长达数公里行驶里程的车辆而言，该技术能显著提升多帧融合的位姿精度与场景重建质量。\n*   **AR/VR 空间计算：** 允许设备在长时间的连续扫描过程中，不断优化其对周围环境的“记忆”，构建更完整、一致的数字孪生模型。\n*   **无人机测绘：** 在进行大规模航拍重建时，该方法有助于解决由于相机运动剧烈导致的全局漂移（drift）问题。",
+      "limitations": "*   **自监督信号的鲁棒性：** 测试时训练（TTT）的效果高度依赖于自监督目标函数的有效性。如果场景极其复杂或纹理高度重复，自监督信号可能会引导模型收敛到错误的几何状态。\n*   **在线更新的计算延迟：** 虽然论文提到该方案是“轻量级”的，但在极高帧率要求的移动端设备上，每帧或每隔几帧进行参数更新（即便是子网络）是否能完全满足实时性需求仍有待商榷。\n*   **遗忘机制（Catastrophic Forgetting）：** 在超长序列中，如何确保模型在更新新场景信息时，不会丢失之前序列的关键几何信息，这也是此类方法通常面临的挑战。\n\n---\n\n**专家点评：**\n这篇论文的有趣之处在于它将**“记忆化（Memorization）”**和**“自适应（Adaptation）”**巧妙地结合在一起。传统的3D重建要么是基于优化的（如COLMAP，极慢），要么是基于学习的（如Feed-forward，易丢失一致性），Scal3R 通过引入能够动态更新的神经上下文，提供了一种“即插即用”的中间路线，这对于推进大规模、长生命周期的3D感知系统具有重要的工程参考价值。\n\n**"
+    },
+    "keyFindings": [
+      "Motivated by this, we propose a novel neural global context representation that efficiently compresses and retains long-range scene information, enabling the model to leverage extensive contextual cues for enhanced reconstruction accuracy and consistency.",
+      "The experiments on multiple large-scale benchmarks, including the KITTI Odometry~\\cite{Geiger2012CVPR} and Oxford Spires~\\cite{tao2025spires} datasets, demonstrate the effectiveness of our approach in handling ultra-large scenes, achieving leading pose accuracy and state-of-the-art 3D reconstruction accuracy while maintaining efficiency."
+    ],
+    "links": {
+      "pdf": "https://arxiv.org/pdf/2604.08542v1",
+      "arxiv": "https://arxiv.org/abs/2604.08542v1"
+    },
+    "source": "arxiv",
+    "date": "2026-04-10",
+    "narratorHint": "propose a novel neural global context representation that efficiently compresses."
+  },
+  {
+    "title": "OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks",
+    "url": "https://arxiv.org/abs/2604.08539v1",
+    "authors": [
+      "Wenbo Hu",
+      "Xin Chen",
+      "Yan Gao-Tian",
+      "Yihe Deng",
+      "Nanyun Peng",
+      "Kai-Wei Chang"
+    ],
+    "published": "2026-04-09",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "abstract": "**\n\nGroup Relative Policy Optimization (GRPO) has emerged as the de facto Reinforcement Learning (RL) objective driving recent advancements in Multimodal Large Language Models. However, extending this success to open-source multimodal generalist models remains heavily constrained by two primary challenges: the extreme variance in reward topologies across diverse visual tasks, and the inherent difficulty of balancing fine-grained perception with multi-step reasoning capabilities. To address these issues, we introduce Gaussian GRPO (G$^2$RPO), a novel RL training objective that replaces standard linear scaling with non-linear distributional matching. By mathematically forcing the advantage distribution of any given task to strictly converge to a standard normal distribution, $\\mathcal{N}(0,1)$, G$^2$RPO theoretically ensures inter-task gradient equity, mitigates vulnerabilities to heavy-tail outliers, and offers symmetric update for positive and negative rewards. Leveraging the enhanced training stability provided by G$^2$RPO, we introduce two task-level shaping mechanisms to seamlessly balance perception and reasoning. First, response length shaping dynamically elicits extended reasoning chains for complex queries while enforce direct outputs to bolster visual grounding. Second, entropy shaping tightly bounds the model's exploration zone, effectively preventing both entropy collapse and entropy explosion. Integrating these methodologies, we present OpenVLThinkerV2, a highly robust, general-purpose multimodal model. Extensive evaluations across 18 diverse benchmarks demonstrate its superior performance over strong open-source and leading proprietary frontier models.\n\n**",
+    "analysis": {
+      "0": "以下是对论文《OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks》的方法深度分析。",
+      "5": "*   **核心思想**：通过最优传输将多任务奖励统一映射为正态分布，彻底解决跨任务梯度不平衡。\n*   **速记版pipeline**：\n    1.  计算奖励排序分布。\n    2.  利用分位数函数将排序映射到标准正态分布。\n    3.  结合长度和熵约束进行边际惩罚。\n    4.  计算最终优势值并执行 clipped PPO 更新。\n\n**",
+      "summary": "Group Relative Policy Optimization (GRPO) 已成为推动多模态大语言模型（MLLM）进展的实际强化学习（RL）标准。然而，将其扩展至开源多模态通用模型仍受限于两大挑战：不同视觉任务间奖励拓扑的极端差异，以及在细粒度感知与多步推理之间平衡的内在困难。为解决这些问题，我们引入了高斯 GRPO (G²RPO)，这是一种新的 RL 训练目标，通过非线性分布匹配取代了标准线性缩放。通过数学上强制各任务的优势分布严格收敛于标准正态分布 $\\mathcal{N}(0,1)$，G²RPO 理论上确保了跨任务的梯度公平性，缓解了对重尾异常值的脆弱性，并提供了针对正负奖励的对称更新。利用 G²RPO 提供的增强训练稳定性，我们引入了两种任务级塑形机制来无缝平衡感知与推理。首先，响应长度塑形动态地为复杂查询引发扩展的推理链，同时强制直接输出以增强视觉定位。其次，熵塑形紧密限制模型的探索区域，有效防止了熵崩溃和熵爆炸。结合这些方法，我们提出了 OpenVLThinkerV2，这是一个高度鲁棒的通用多模态模型。在 18 个不同基准测试上的广泛评估证明了其优于强开源和领先商业前沿模型的卓越性能。",
+      "method": "*   **本质区别**：从传统的“线性标准化（处理一二阶矩）”转向“非线性分布匹配（处理全分布形态）”。\n*   **创新点**：将强化学习中的优势估计转化为 1D 最优传输（Optimal Transport）问题，利用闭式解高效实现分布映射。\n*   **适用场景**：极度异构的多任务强化学习场景，特别是存在奖励范围跨度大、长尾分布严重的任务集。",
+      "experiment": "*   **结论**：G²RPO 显著提升了模型在 MMMU 和 MathVista 等推理型基准上的表现，并使其在视觉定位任务上达到了 SOTA 水平。\n*   **优势**：训练曲线更平滑（相比 GRPO 震荡更小），跨任务收敛更稳健，无需复杂的超参数精细调试。\n*   **局限**：对任务特有的长度和熵阈值设置依赖一定经验，虽表现出良好的鲁棒性，但尚未实现完全自动化的动态搜索。",
+      "related": "*   **实现细节**：G²RPO 计算中使用的 `torch.erfinv` 是核心实现点，算法保持了与标准 GRPO 类似的计算复杂度。\n*   **迁移建议**：该方法非常适合迁移至需要混合多种任务类型（如多模态、编程、逻辑推理）的 RLHF 阶段。只需定义好任务类别的期望长度与熵范围，即可直接替换原有的 advantage 计算逻辑。"
+    },
+    "keyFindings": [
+      "To address these issues, we introduce Gaussian GRPO (G$^2$RPO), a novel RL training objective that replaces standard linear scaling with non-linear distributional matching.",
+      "Leveraging the enhanced training stability provided by G$^2$RPO, we introduce two task-level shaping mechanisms to seamlessly balance perception and reasoning.",
+      "Integrating these methodologies, we present OpenVLThinkerV2, a highly robust, general-purpose multimodal model."
+    ],
+    "links": {
+      "pdf": "https://arxiv.org/pdf/2604.08539v1",
+      "arxiv": "https://arxiv.org/abs/2604.08539v1"
+    },
+    "source": "arxiv",
+    "date": "2026-04-10",
+    "narratorHint": "introduce Gaussian GRPO (G$^2$RPO), a novel RL training objective that replaces ."
   }
 ]

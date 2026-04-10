@@ -1,214 +1,76 @@
 [
   {
-    "name": "llm_pricing_list",
-    "description": "Scrape the official websites for LLM pricing",
+    "name": "visualDet3D",
+    "description": "Official Repo for Ground-aware Monocular 3D Object Detection for Autonomous Driving / YOLOStereo3D: A Step Back to 2D for Efficient Stereo 3D Detection",
+    "url": "https://github.com/Owen-Liuyuxuan/visualDet3D",
+    "stars": 398,
+    "forks": 78,
     "language": "Python",
-    "category": "data-viz",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Scrape the official websites for LLM pricing Written in Python."
-  },
-  {
-    "name": "openclaw_vscode",
-    "description": "Chat with Local OpenClaw in VSCode",
-    "language": "TypeScript",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Chat with OpenClaw directly inside VSCode — because switching windows is for quitters."
-  },
-  {
-    "name": "arxiv_word_cloud",
-    "description": "Showing the Arxiv word cloud evolution",
-    "language": "JavaScript",
-    "category": "data-viz",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Showing the Arxiv word cloud evolution Written in JavaScript."
-  },
-  {
-    "name": "paper-helper-server",
-    "description": "AI-powered Q&A server for [papers_reading_sharing.github.io](https://owen-liuyuxuan.github.io/papers_reading_sharing.github.io/).",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "AI Q&A server behind my paper reading blog — ask questions, get answers"
-  },
-  {
-    "name": "autoware_mapTR_naive_engine",
-    "description": "training a naive map Transformer",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "training a naive map Transformer Written in Python."
-  },
-  {
-    "name": "gemini_paper2slide",
-    "description": "A full Gemini implementation of paper2slide",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Gemini reads papers and spits out slides — too lazy to make them myself? No more."
-  },
-  {
-    "name": "ros_schema2param",
-    "description": "Fix the parameter creation from schema so that we will not forget adding parameters.",
-    "language": "Jinja",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Fix the parameter creation from schema so that we will not forget adding parameters. Written in Jinja."
-  },
-  {
-    "name": "sam3d_uv_float16",
-    "description": "SAM3D Half, tested in 4090 with daily desktop ubuntu memory occupied.",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "SAM3D Half, tested in 4090 with daily desktop ubuntu memory occupied. Written in Python."
-  },
-  {
-    "name": "huarongdao-gemini3",
-    "description": "This is the codes and images created by Gemini3 Pro as the huarongdao game",
-    "language": "JavaScript",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "This is the codes and images created by Gemini3 Pro as the huarongdao game Written in JavaScript."
-  },
-  {
-    "name": "one_plus_one",
-    "description": "1+1 Childhood game in web",
-    "language": "JavaScript",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "1+1 Childhood game in web Written in JavaScript."
-  },
-  {
-    "name": "everyday_my_arxiv",
-    "description": "Use LLM and arxiv reader to obtain arxiv paper every day; Please check Wiki page or the ReadingCollectionWebsite",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "One paper a day, keep the Dr. away. This pipeline feeds my INTEL feed on this site."
-  },
-  {
-    "name": "llm_pr_analyzer",
-    "description": "Uses Large Language Models to analyze multiple GitHub Pull Requests, group them by functionality, and provide comprehensive insights on system changes.",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Uses Large Language Models to analyze multiple GitHub Pull Requests, group them by functionality, and provide comprehensive insights on system changes. Written in Python."
-  },
-  {
-    "name": "dino_scene_understand_demo",
-    "description": "",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Written in Python."
-  },
-  {
-    "name": "scene_understanding_tool",
-    "description": "",
-    "language": "HTML",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Written in HTML."
-  },
-  {
-    "name": "personal_deepseek_agent",
-    "description": "",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Written in Python."
-  },
-  {
-    "name": "reminder_ubuntu",
-    "description": "A toy tool to have a (background) reminder",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "A toy tool to have a (background) reminder Written in Python."
-  },
-  {
-    "name": "naiveTF",
-    "description": "Naive Plan TF",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Naive Plan TF Written in Python."
-  },
-  {
-    "name": "autoware_tf_data_engine",
-    "description": "",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Written in Python."
-  },
-  {
-    "name": "autoware-docs-sync",
-    "description": "Synchronizing Autoware Universe documentation into Google Drive",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Synchronizing Autoware Universe documentation into Google Drive Written in Python."
-  },
-  {
-    "name": "autoware_type_adapters",
-    "description": "Type Adapters for CUDA Image",
-    "language": "C++",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Type Adapters for CUDA Image Written in C++."
-  },
-  {
-    "name": "pyhelp",
-    "description": "Personal Pyhelp Library",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Personal Pyhelp Library Written in Python."
-  },
-  {
-    "name": "localPDFSummarizer",
-    "description": " a purely simple local attempt for summarizing academic PDF with learning-based tool-box.",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Say NO to cloud-AI Companies!"
+    "category": "research",
+    "topics": [
+      "computer-vision",
+      "icra",
+      "monocular-3d-detection",
+      "object-detection",
+      "pytorch",
+      "stereo-3d-detection"
+    ],
+    "updatedAt": "2026-03-15",
+    "narratorHint": "Monocular 3D detection, stereo 3D detection, all in one."
   },
   {
     "name": "ros2_vision_inference",
     "description": "unified multi-threading inferencing nodes for monocular 3D object detection, depth prediction and semantic segmentation",
+    "url": "https://github.com/Owen-Liuyuxuan/ros2_vision_inference",
+    "stars": 65,
+    "forks": 3,
     "language": "Python",
     "category": "ros",
     "topics": [],
-    "updatedAt": "",
+    "updatedAt": "2026-02-28",
     "narratorHint": "ROS2 nodes for 3D detection, depth, and segmentation — all in one."
+  },
+  {
+    "name": "FSNet",
+    "description": "Full Scale Monocular Depth Prediction. Official Implementation of \"FSNet: Redesign Self-Supervised MonoDepth for Full-Scale Depth Prediction for Autonomous Driving\" https://arxiv.org/abs/2304.10719 ",
+    "url": "https://github.com/Owen-Liuyuxuan/FSNet",
+    "stars": 63,
+    "forks": 6,
+    "language": "Python",
+    "category": "research",
+    "topics": [
+      "depth-estimation",
+      "kitti-dataset",
+      "kitti360",
+      "monocular-depth-estimation",
+      "nuscenes"
+    ],
+    "updatedAt": "2026-01-08",
+    "narratorHint": "FSNet — \"full scale\" is both a feature and a pun."
+  },
+  {
+    "name": "papers_reading_sharing.github.io",
+    "description": "Sites to share deep learning related papers and their digests",
+    "url": "https://github.com/Owen-Liuyuxuan/papers_reading_sharing.github.io",
+    "stars": 57,
+    "forks": 8,
+    "language": "HTML",
+    "category": "ai-tools",
+    "topics": [
+      "github-page",
+      "mkdocs",
+      "utterances",
+      "wiki"
+    ],
+    "updatedAt": "2026-04-10",
+    "narratorHint": "Paper reading blog. Have you read a paper today?"
   },
   {
     "name": "visionfactory",
     "description": "Open source training framework for vision tasks. Scales up on data and scales up on tasks. Official Implementation for https://arxiv.org/abs/2310.00920",
+    "url": "https://github.com/Owen-Liuyuxuan/visionfactory",
+    "stars": 43,
+    "forks": 6,
     "language": "Python",
     "category": "research",
     "topics": [
@@ -220,12 +82,74 @@
       "nuscenes",
       "object-detection"
     ],
-    "updatedAt": "",
+    "updatedAt": "2025-10-29",
     "narratorHint": "visionfactory — the flexible training playground. Scales up on data, scales up on tasks."
+  },
+  {
+    "name": "visualDet3D_ros",
+    "description": "A naive ROS interface for visualDet3D.",
+    "url": "https://github.com/Owen-Liuyuxuan/visualDet3D_ros",
+    "stars": 28,
+    "forks": 4,
+    "language": "Python",
+    "category": "ros",
+    "topics": [],
+    "updatedAt": "2025-09-26",
+    "narratorHint": "ROS wrapper for visualDet3D — because your 3D detector deserves to live in ROS too."
+  },
+  {
+    "name": "nuscenes_visualize",
+    "description": "Visualize nuScenes sequences on ROS with full tf support.",
+    "url": "https://github.com/Owen-Liuyuxuan/nuscenes_visualize",
+    "stars": 21,
+    "forks": 5,
+    "language": "Python",
+    "category": "ros",
+    "topics": [
+      "autonomous-vehicles",
+      "computer-vision",
+      "nuscenes",
+      "ros-noetic"
+    ],
+    "updatedAt": "2025-09-09",
+    "narratorHint": "nuScenes in ROS1 with full TF tree. Are you still using ROS1?"
+  },
+  {
+    "name": "kitti_visualize",
+    "description": "Visualize KITTI sequences and object detection benchmark on ROS with full tf support.",
+    "url": "https://github.com/Owen-Liuyuxuan/kitti_visualize",
+    "stars": 20,
+    "forks": 3,
+    "language": "Python",
+    "category": "ros",
+    "topics": [
+      "computer-vision",
+      "dataset",
+      "kitti-3d",
+      "kitti-dataset",
+      "ros-noetic"
+    ],
+    "updatedAt": "2025-10-14",
+    "narratorHint": "KITTI object detection benchmark on ROS — the OG dataset, still going strong."
+  },
+  {
+    "name": "everyday_my_arxiv",
+    "description": "Use LLM and arxiv reader to obtain arxiv paper every day; Please check Wiki page or the ReadingCollectionWebsite",
+    "url": "https://github.com/Owen-Liuyuxuan/everyday_my_arxiv",
+    "stars": 18,
+    "forks": 2,
+    "language": "Python",
+    "category": "ai-tools",
+    "topics": [],
+    "updatedAt": "2026-03-25",
+    "narratorHint": "One paper a day, keep the Dr. away. This pipeline feeds my INTEL feed on this site."
   },
   {
     "name": "ros2_dataset_bridge",
     "description": "ROS2 Python Package for visualizing KITTI/KITTI360/nuScenes datasets in RVIZ2",
+    "url": "https://github.com/Owen-Liuyuxuan/ros2_dataset_bridge",
+    "stars": 12,
+    "forks": 3,
     "language": "Python",
     "category": "ros",
     "topics": [
@@ -236,59 +160,15 @@
       "ros2",
       "rviz2"
     ],
-    "updatedAt": "",
+    "updatedAt": "2026-01-18",
     "narratorHint": "ROS2 tools for visualizing KITTI, KITTI360, and nuScenes in RVIZ2. PhD survival kit."
-  },
-  {
-    "name": "dgp_visualize",
-    "description": "visualizing DGP in ROS. Basically same formats with other visualization methods",
-    "language": "Python",
-    "category": "ai-tools",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "visualizing DGP in ROS. Basically same formats with other visualization methods Written in Python."
-  },
-  {
-    "name": "monodepth_ros",
-    "description": "MonoDepth ROS Node. Used with FSNet https://github.com/Owen-Liuyuxuan/FSNet",
-    "language": "Python",
-    "category": "ros",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "MonoDepth as a ROS node — pairs with FSNet for real-world depth inference."
-  },
-  {
-    "name": "FSNet",
-    "description": "Full Scale Monocular Depth Prediction. Official Implementation of \"FSNet: Redesign Self-Supervised MonoDepth for Full-Scale Depth Prediction for Autonomous Driving\" https://arxiv.org/abs/2304.10719 ",
-    "language": "Python",
-    "category": "research",
-    "topics": [
-      "depth-estimation",
-      "kitti-dataset",
-      "kitti360",
-      "monocular-depth-estimation",
-      "nuscenes"
-    ],
-    "updatedAt": "",
-    "narratorHint": "FSNet — \"full scale\" is both a feature and a pun."
-  },
-  {
-    "name": "nuscenes_visualize",
-    "description": "Visualize nuScenes sequences on ROS with full tf support.",
-    "language": "Python",
-    "category": "ros",
-    "topics": [
-      "autonomous-vehicles",
-      "computer-vision",
-      "nuscenes",
-      "ros-noetic"
-    ],
-    "updatedAt": "",
-    "narratorHint": "nuScenes in ROS1 with full TF tree. Are you still using ROS1?"
   },
   {
     "name": "kitti360_visualize",
     "description": "Visualize KITTI360 sequences on ROS with full tf support.",
+    "url": "https://github.com/Owen-Liuyuxuan/kitti360_visualize",
+    "stars": 10,
+    "forks": 1,
     "language": "Python",
     "category": "ros",
     "topics": [
@@ -297,115 +177,115 @@
       "dataset",
       "kitti-360"
     ],
-    "updatedAt": "",
+    "updatedAt": "2024-07-20",
     "narratorHint": "KITTI360 on ROS — because why not go 360 degrees with your research?"
   },
   {
-    "name": "kitti_visualize",
-    "description": "Visualize KITTI sequences and object detection benchmark on ROS with full tf support.",
+    "name": "monodepth_ros",
+    "description": "MonoDepth ROS Node. Used with FSNet https://github.com/Owen-Liuyuxuan/FSNet",
+    "url": "https://github.com/Owen-Liuyuxuan/monodepth_ros",
+    "stars": 8,
+    "forks": 0,
     "language": "Python",
     "category": "ros",
-    "topics": [
-      "computer-vision",
-      "dataset",
-      "kitti-3d",
-      "kitti-dataset",
-      "ros-noetic"
-    ],
-    "updatedAt": "",
-    "narratorHint": "KITTI object detection benchmark on ROS — the OG dataset, still going strong."
+    "topics": [],
+    "updatedAt": "2024-09-21",
+    "narratorHint": "MonoDepth as a ROS node — pairs with FSNet for real-world depth inference."
   },
   {
-    "name": "Owen-Liuyuxuan.github.io",
-    "description": "https://owen-liuyuxuan.github.io/",
-    "language": "CSS",
+    "name": "openclaw_vscode",
+    "description": "Chat with Local OpenClaw in VSCode",
+    "url": "https://github.com/Owen-Liuyuxuan/openclaw_vscode",
+    "stars": 7,
+    "forks": 2,
+    "language": "TypeScript",
     "category": "ai-tools",
     "topics": [],
-    "updatedAt": "",
-    "narratorHint": "https://owen-liuyuxuan.github.io/ Written in CSS."
-  },
-  {
-    "name": "visualDet3D_ros",
-    "description": "A naive ROS interface for visualDet3D.",
-    "language": "Python",
-    "category": "ros",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "ROS wrapper for visualDet3D — because your 3D detector deserves to live in ROS too."
-  },
-  {
-    "name": "visualDet3D",
-    "description": "Official Repo for Ground-aware Monocular 3D Object Detection for Autonomous Driving / YOLOStereo3D: A Step Back to 2D for Efficient Stereo 3D Detection",
-    "language": "Python",
-    "category": "research",
-    "topics": [
-      "computer-vision",
-      "icra",
-      "monocular-3d-detection",
-      "object-detection",
-      "pytorch",
-      "stereo-3d-detection"
-    ],
-    "updatedAt": "",
-    "narratorHint": "Monocular 3D detection, stereo 3D detection, all in one."
-  },
-  {
-    "name": "papers_reading_sharing.github.io",
-    "description": "Sites to share deep learning related papers and their digests",
-    "language": "HTML",
-    "category": "data-viz",
-    "topics": [
-      "github-page",
-      "mkdocs",
-      "utterances",
-      "wiki"
-    ],
-    "updatedAt": "",
-    "narratorHint": "Paper reading blog. Have you read a paper today?"
-  },
-  {
-    "name": "final_design_ws",
-    "description": "Final year project. Simulation with dbw_mkz tool box , Controller design, lane recognition, lane tracking and more",
-    "language": "C++",
-    "category": "early-work",
-    "topics": [],
-    "updatedAt": "",
-    "narratorHint": "Final year project. Simulation with dbw_mkz tool box , Controller design, lane recognition, lane tracking and more Written in C++."
+    "updatedAt": "2026-03-12",
+    "narratorHint": "Chat with OpenClaw directly inside VSCode — because switching windows is for quitters."
   },
   {
     "name": "Hacking_dbw_mkz",
     "description": "Hacking into Dataspeed ADAS Development Vehicle Kit. Try to open up the semi-open-source simulation.",
+    "url": "https://github.com/Owen-Liuyuxuan/Hacking_dbw_mkz",
+    "stars": 7,
+    "forks": 4,
     "language": "C++",
     "category": "early-work",
     "topics": [],
-    "updatedAt": "",
+    "updatedAt": "2024-09-07",
     "narratorHint": "Hacking the Dataspeed ADAS kit — reverse engineering when you can't get the source. Early-adopter energy."
   },
   {
-    "name": "serial_ros_pendulum",
-    "description": "I am too boring to practise a project. It include parts of serial communication, ros, inverted pendulum control",
-    "language": "CMake",
+    "name": "localPDFSummarizer",
+    "description": " a purely simple local attempt for summarizing academic PDF with learning-based tool-box.",
+    "url": "https://github.com/Owen-Liuyuxuan/localPDFSummarizer",
+    "stars": 5,
+    "forks": 0,
+    "language": "Python",
     "category": "ai-tools",
     "topics": [],
-    "updatedAt": "",
-    "narratorHint": "I am too boring to practise a project. It include parts of serial communication, ros, inverted pendulum control Written in CMake."
+    "updatedAt": "2024-02-24",
+    "narratorHint": "Say NO to cloud-AI Companies!"
+  },
+  {
+    "name": "paper-helper-server",
+    "description": "AI-powered Q&A server for [papers_reading_sharing.github.io](https://owen-liuyuxuan.github.io/papers_reading_sharing.github.io/).",
+    "url": "https://github.com/Owen-Liuyuxuan/paper-helper-server",
+    "stars": 4,
+    "forks": 0,
+    "language": "Python",
+    "category": "ai-tools",
+    "topics": [],
+    "updatedAt": "2026-02-03",
+    "narratorHint": "AI Q&A server behind my paper reading blog — ask questions, get answers"
+  },
+  {
+    "name": "gemini_paper2slide",
+    "description": "A full Gemini implementation of paper2slide",
+    "url": "https://github.com/Owen-Liuyuxuan/gemini_paper2slide",
+    "stars": 4,
+    "forks": 1,
+    "language": "Python",
+    "category": "ai-tools",
+    "topics": [],
+    "updatedAt": "2026-02-13",
+    "narratorHint": "Gemini reads papers and spits out slides — too lazy to make them myself? No more."
+  },
+  {
+    "name": "sam3d_uv_float16",
+    "description": "SAM3D Half, tested in 4090 with daily desktop ubuntu memory occupied.",
+    "url": "https://github.com/Owen-Liuyuxuan/sam3d_uv_float16",
+    "stars": 4,
+    "forks": 1,
+    "language": "Python",
+    "category": "ai-tools",
+    "topics": [],
+    "updatedAt": "2026-01-19",
+    "narratorHint": "SAM3D Half, tested in 4090 with daily desktop ubuntu memory occupied. Written in Python."
   },
   {
     "name": "SRTP_Predicting_Knee_Joint_Angle",
     "description": "",
+    "url": "https://github.com/Owen-Liuyuxuan/SRTP_Predicting_Knee_Joint_Angle",
+    "stars": 3,
+    "forks": 1,
     "language": "C",
     "category": "early-work",
     "topics": [],
-    "updatedAt": "",
+    "updatedAt": "2023-06-07",
     "narratorHint": "Written in C."
   },
   {
     "name": "Road-sign-Arrow-Recognition",
     "description": "First time use Tensorflow to recognize simple road sign. Images are classified as 5 classes.",
+    "url": "https://github.com/Owen-Liuyuxuan/Road-sign-Arrow-Recognition",
+    "stars": 3,
+    "forks": 1,
     "language": "Python",
     "category": "early-work",
     "topics": [],
-    "updatedAt": "",
+    "updatedAt": "2025-04-16",
     "narratorHint": "First time use Tensorflow to recognize simple road sign. Images are classified as 5 classes. Written in Python."
   }
 ]
