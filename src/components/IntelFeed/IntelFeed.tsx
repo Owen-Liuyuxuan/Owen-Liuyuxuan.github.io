@@ -57,35 +57,81 @@ function truncate(text: string, maxLen: number): string {
   return clean.length > maxLen ? clean.slice(0, maxLen) + "…" : clean;
 }
 
-function InsightsBadge({ analysis }: { analysis: IntelItem["analysis"] }) {
-  const items = [];
-  if (analysis.summary) items.push("摘要");
-  if (analysis.method) items.push("方法");
-  if (analysis.experiment) items.push("实验");
-  if (analysis.impact || analysis.related) items.push("应用");
-  if (analysis.limitations) items.push("局限");
-  if (items.length === 0) return null;
-  return (
-    <span className="text-[9px] text-cyan-400/50 border border-cyan-400/20 px-1.5 py-0.5 rounded font-mono">
-      {items.join(" · ")}
-    </span>
-  );
-}
+const ANALYSIS_FIELD_META: { key: string; label: string; icon: string }[] = [
+  { key: "method",      label: "方法",  icon: "⚙️" },
+  { key: "experiment", label: "实验",  icon: "🔬" },
+  { key: "impact",     label: "应用",  icon: "🚀" },
+  { key: "limitations", label: "局限",  icon: "⚠️" },
+  { key: "related",     label: "相关",  icon: "🔗" },
+  { key: "summary",     label: "摘要",  icon: "📋" },
+];
 
 function KeyFindingsList({ findings }: { findings: string[] }) {
   if (findings.length === 0) return null;
   return (
     <ul className="mt-2 space-y-1">
-      {findings.slice(0, 3).map((f, i) => (
+      {findings.map((f, i) => (
         <li key={i} className="text-xs text-white-soft/30 font-body flex gap-1.5 items-start">
           <span className="text-cyan-400/40 mt-0.5 shrink-0">▸</span>
-          <span>{truncate(f, 120)}</span>
+          <span>{f.replace(/\*\*/g, "").replace(/\n/g, " ").trim()}</span>
         </li>
       ))}
-      {findings.length > 3 && (
-        <li className="text-[10px] text-cyan-400/30 font-mono">+{findings.length - 3} more findings</li>
-      )}
     </ul>
+  );
+}
+
+function cleanAnalysisText(text: string): string {
+  return text
+    .replace(/\*\*/g, "")
+    .replace(/^[\*\-]+\s*/gm, "")
+    .replace(/^#{1,6}\s+/gm, "")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function renderBulletList(text: string): React.ReactNode {
+  const lines = text.split("\n").filter((l) => l.trim());
+  const bulletRe = /^[\-\*]\s+/;
+  const result: React.ReactNode[] = [];
+  let buffer: string[] = [];
+
+  const flush = () => {
+    if (buffer.length === 0) return;
+    result.push(
+      <li key={`buf-${result.length}`} className="text-xs text-white-soft/40 font-body leading-relaxed pl-2">
+        {buffer.join(" ")}
+      </li>
+    );
+    buffer = [];
+  };
+
+  for (const line of lines) {
+    if (bulletRe.test(line) || line.match(/^\d+\.\s/)) {
+      flush();
+      const content = line.replace(bulletRe, "").replace(/^\d+\.\s/, "");
+      result.push(
+        <li key={`bullet-${result.length}`} className="text-xs text-white-soft/40 font-body leading-relaxed pl-2 before:content-['▸_'] before:text-cyan-400/30">
+          {content}
+        </li>
+      );
+    } else {
+      buffer.push(line.trim());
+    }
+  }
+  flush();
+  return result.length > 0 ? <ul className="mt-1 space-y-0.5">{result}</ul> : null;
+}
+
+function AnalysisSection({ text }: { text: string }) {
+  if (!text) return null;
+  const cleaned = cleanAnalysisText(text);
+  const bullets = renderBulletList(cleaned);
+  return (
+    <div className="mt-3">
+      {bullets ?? (
+        <p className="text-xs text-white-soft/40 font-body leading-relaxed">{cleaned}</p>
+      )}
+    </div>
   );
 }
 
@@ -125,6 +171,11 @@ export default function IntelFeed() {
       >
         {items.map((item, i) => {
           const isOpen = expanded.has(i);
+
+          const presentAnalysisFields = ANALYSIS_FIELD_META.filter(
+            ({ key }) => item.analysis[key]
+          );
+
           return (
             <motion.div
               key={`${item.title}-${i}`}
@@ -183,23 +234,32 @@ export default function IntelFeed() {
                         {cat}
                       </span>
                     ))}
-                    <InsightsBadge analysis={item.analysis} />
                   </div>
 
                   {/* Abstract preview */}
                   {item.abstract && (
                     <p className={`font-body text-xs mt-2 transition-all duration-200 ${isOpen ? "text-white-soft/50" : "text-white-soft/30 line-clamp-2"}`}>
-                      {isOpen ? item.abstract.replace(/\*\*/g, "").replace(/\n+/g, " ").trim()
-                               : shorten(item.abstract, 150)}
+                      {isOpen
+                        ? item.abstract.replace(/\*\*/g, "").replace(/\n+/g, " ").trim()
+                        : shorten(item.abstract, 150)}
                     </p>
                   )}
                 </div>
               </div>
 
-              {/* Expanded: key findings + links */}
+              {/* Expanded: analysis + key findings */}
               {isOpen && (
                 <div className="mt-3 pt-3 border-t border-white-soft/10 pl-0">
-                  <KeyFindingsList findings={item.keyFindings} />
+                  {presentAnalysisFields.length > 0 && (
+                    presentAnalysisFields.map(({ key }) => (
+                      <AnalysisSection key={key} text={item.analysis[key] ?? ""} />
+                    ))
+                  )}
+
+                  {item.keyFindings.length > 0 && (
+                    <KeyFindingsList findings={item.keyFindings} />
+                  )}
+
                   <div className="flex gap-3 mt-3">
                     {item.links.pdf && (
                       <a
