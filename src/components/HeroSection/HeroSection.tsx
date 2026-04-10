@@ -86,9 +86,9 @@ export default function HeroSection() {
         </p>
       </div>
 
-      {/* Education + Skills */}
+      {/* Experience + Skills */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {/* Education Timeline */}
+        {/* Experience Timeline */}
         <div
           className="game-card"
           data-narrator="The journey so far"
@@ -97,7 +97,7 @@ export default function HeroSection() {
             className="font-pixel text-xs text-cyan-glow mb-4"
             data-narrator="The journey so far"
           >
-            EDUCATION
+            EXPERIENCE
           </h2>
           <div className="space-y-4">
             {education.map((edu, i) => (

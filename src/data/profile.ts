@@ -70,6 +70,13 @@ export const PROFILE: Profile = {
   ],
   education: [
     {
+      degree: "System Engineer",
+      school: "TIER IV",
+      period: "2023 – Present",
+      narratorHint:
+        "System Engineer at TIER IV in Tokyo — building the future of autonomous driving with Autoware.",
+    },
+    {
       degree: "Ph.D. in Electronic and Computer Engineering",
       school: "Hong Kong University of Science and Technology",
       period: "2019 – 2024",
@@ -82,13 +89,6 @@ export const PROFILE: Profile = {
       period: "2015 – 2019",
       narratorHint:
         "ZJU undergrad — where the robotics obsession started and never really ended.",
-    },
-    {
-      degree: "System Engineer",
-      school: "TIER IV",
-      period: "2023 – Present",
-      narratorHint:
-        "System Engineer at TIER IV in Tokyo — building the future of autonomous driving with Autoware.",
-    },
+    }
   ],
 };
