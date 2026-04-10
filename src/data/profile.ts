@@ -63,7 +63,7 @@ export const PROFILE: Profile = {
     },
     {
       label: "Resume",
-      url: "/cv.pdf",
+      url: "/yuxuanliu_cv.pdf",
       icon: "📄",
       narratorHint: "Download my CV in PDF format.",
     },
