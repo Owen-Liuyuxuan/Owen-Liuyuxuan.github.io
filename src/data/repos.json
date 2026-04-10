@@ -1,0 +1,62 @@
+[
+  {
+    "name": "visualDet3D",
+    "description": "Official Repo for Ground-aware Monocular 3D Object Detection / YOLOStereo3D",
+    "url": "https://github.com/Owen-Liuyuxuan/visualDet3D",
+    "stars": 398,
+    "forks": 78,
+    "language": "Python",
+    "category": "research",
+    "topics": ["computer-vision", "pytorch", "monocular-3d-detection", "stereo-3d-detection"],
+    "updatedAt": "2023-02-05",
+    "narratorHint": "visualDet3D — my flagship 3D detection codebase. 398 stars on GitHub."
+  },
+  {
+    "name": "FSNet",
+    "description": "Full-Scale Self-Supervised Monocular Depth Prediction for Autonomous Driving",
+    "url": "https://github.com/Owen-Liuyuxuan/FSNet",
+    "stars": 63,
+    "forks": 6,
+    "language": "Python",
+    "category": "research",
+    "topics": ["depth-estimation", "self-supervised", "monocular", "autonomous-driving"],
+    "updatedAt": "2023-04-18",
+    "narratorHint": "FSNet — full-scale monocular depth estimation. My main depth work."
+  },
+  {
+    "name": "ros2_vision_inference",
+    "description": "Unified multi-threading inferencing nodes for monocular 3D detection, depth, and segmentation",
+    "url": "https://github.com/Owen-Liuyuxuan/ros2_vision_inference",
+    "stars": 65,
+    "forks": 3,
+    "language": "Python",
+    "category": "ros",
+    "topics": ["ros2", "inference", "depth-estimation"],
+    "updatedAt": "2025-02-18",
+    "narratorHint": "ROS2 vision inference — deploy multiple vision models as ROS2 nodes."
+  },
+  {
+    "name": "visionfactory",
+    "description": "Open source training framework for vision tasks including detection, segmentation, and depth",
+    "url": "https://github.com/Owen-Liuyuxuan/visionfactory",
+    "stars": 43,
+    "forks": 6,
+    "language": "Python",
+    "category": "research",
+    "topics": ["pytorch", "training", "computer-vision"],
+    "updatedAt": "2024-01-10",
+    "narratorHint": "visionfactory — a flexible training framework for vision tasks."
+  },
+  {
+    "name": "everyday_my_arxiv",
+    "description": "Daily arXiv paper reading digest — automated tracking of interesting papers in AI and robotics",
+    "url": "https://github.com/Owen-Liuyuxuan/everyday_my_arxiv",
+    "stars": 28,
+    "forks": 2,
+    "language": "Python",
+    "category": "ai-tools",
+    "topics": ["arxiv", "paper-reading", "automation"],
+    "updatedAt": "2025-03-20",
+    "narratorHint": "everyday_my_arxiv — my personal daily arXiv reading tracker. Powers the INTEL feed on this site."
+  }
+]

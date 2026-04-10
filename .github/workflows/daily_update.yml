@@ -1,0 +1,57 @@
+# .github/workflows/daily_update.yml
+# Daily CI pipeline: fetch GitHub data + intel feed → rebuild & deploy site.
+
+name: Daily Site Update
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC (09:00 JST)
+    - cron: "0 0 * * *"
+  workflow_dispatch: {}  # Allow manual trigger
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch GitHub repos data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run fetch:repos
+
+      - name: Fetch intel feed data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run fetch:intel
+
+      - name: Generate narrator texts (for dynamic content)
+        run: npm run generate:narrator
+
+      - name: Build Next.js static site
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out

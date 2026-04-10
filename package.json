@@ -1,0 +1,33 @@
+{
+  "name": "owen-pixel-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Yuxuan Liu's pixel-game-styled personal portfolio website",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "fetch:repos": "node scripts/fetch_github_repos.mjs",
+    "fetch:intel": "node scripts/fetch_intel_feed.mjs",
+    "generate:narrator": "node scripts/generate_narrator_texts.mjs",
+    "prebuild:ci": "npm run fetch:repos && npm run fetch:intel && npm run generate:narrator"
+  },
+  "dependencies": {
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "framer-motion": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0"
+  }
+}

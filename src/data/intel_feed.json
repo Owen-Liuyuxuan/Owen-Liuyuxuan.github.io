@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Example: Scaling Vision Transformers to 22B Parameters",
+    "summary": "Google explores scaling ViT to 22 billion parameters with improved training stability and downstream task performance.",
+    "url": "https://arxiv.org/abs/example",
+    "source": "arxiv",
+    "date": "2026-04-09",
+    "narratorHint": "Today's top paper — scaling ViTs to unprecedented sizes for better representation learning."
+  },
+  {
+    "title": "Understanding MoE Dispatch in DeepSeek-V3",
+    "summary": "A deep dive into the auxiliary-loss-free load balancing strategy used in DeepSeek-V3's Mixture of Experts architecture.",
+    "url": "https://owen-liuyuxuan.github.io/papers_reading_sharing.github.io/",
+    "source": "blog",
+    "date": "2026-04-08",
+    "narratorHint": "My blog post — understanding how DeepSeek-V3 balances expert load without auxiliary losses."
+  },
+  {
+    "title": "Emergent World Models in Large-Scale Video Prediction",
+    "summary": "A new approach to video prediction that shows emergent understanding of physics and scene dynamics at scale.",
+    "url": "https://arxiv.org/abs/example2",
+    "source": "arxiv",
+    "date": "2026-04-07",
+    "narratorHint": "Video prediction with emergent world models — interesting for autonomous driving applications."
+  }
+]

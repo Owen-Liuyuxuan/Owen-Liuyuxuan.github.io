@@ -1,4 +1,21 @@
 _site/
 .sass-cache/
 .jekyll-metadata
-.jekyll-cache
+.jekyll-cache/
+
+# Next.js
+.next/
+out/
+node_modules/
+.env*.local
+.DS_Store
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts (static export output — deployed via CI)
+dist/
