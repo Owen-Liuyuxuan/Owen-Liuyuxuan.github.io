@@ -5,8 +5,8 @@ name: Daily Site Update
 
 on:
   schedule:
-    # Run daily at 00:00 UTC (09:00 JST)
-    - cron: "0 0 * * *"
+    # Run daily at 04:00 UTC (13:00 JST)
+    - cron: "0 4 * * *"
   workflow_dispatch: {}  # Allow manual trigger
 
 permissions:
