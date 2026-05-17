@@ -1,67 +1,66 @@
-<a href="https://jekyll-themes.com">
-<img src="https://img.shields.io/badge/featured%20on-JT-red.svg" height="20" alt="Jekyll Themes Shield" >
-</a>
+# Pixel Lab — Personal portfolio
 
-# Orbit
-> This theme is designed by Xiaoying Riley at [3rd Wave Media](http://themes.3rdwavemedia.com/).
-> Visit her [website](http://themes.3rdwavemedia.com/) for more themes.
+Static, pixel–game–inspired portfolio site for **Yuxuan Liu (刘宇轩)** — AI and robotics research, Autoware-related engineering, publications, GitHub work, and a daily “intel” feed. It replaces the previous Jekyll “online-cv” template entirely.
 
-I have made this into a Jekyll Theme. Checkout the live demo [here](https://online-cv.webjeda.com).
+**Live site:** [owen-liuyuxuan.github.io](https://owen-liuyuxuan.github.io/)
 
-<table>
-  <tr>
-    <th>Desktop</th>
-    <th>Mobile</th>
-  </tr>
-  <tr>
-    <td>
-        <img src="https://online-cv.webjeda.com/assets/images/desktop.png?raw=true" width="600"/>
-    </td>
-    <td>
-        <img src="https://online-cv.webjeda.com/assets/images/mobile.png?raw=true" width="250"/>
-    </td>
-  </tr>
-</table>
+## Stack
 
-## Installation
+- **Next.js** 15 (App Router), **React** 18, **TypeScript**
+- **Tailwind CSS** 3, **Framer Motion** for light UI motion
+- **Static export** (`output: "export"`) → plain HTML/CSS/JS in `out/`, suitable for **GitHub Pages**
+- No server runtime, no client-side calls to GitHub or other APIs (data is baked in at build time)
 
-* [Fork](https://github.com/sharu725/online-cv/fork) the repository
-* Go to settings and set master branch as Github Pages source.
-* Your new site should be ready at `https://<username>.github.io/online-cv/`
-* Printable version of the site can be found at `https://<username>.github.io/online-cv/print`. Use a third party link https://pdflayer.com/, https://www.web2pdfconvert.com/ etc to get the printable PDF.
+## Local development
 
-Change all the details from one place: ``_data/data.yml``
-
-## To preview/edit localy with docker
-
-```sh
-docker-compose up
+```bash
+npm ci
+npm run dev
 ```
 
-*docker-compose.yml* file is used to create a container that is reachable under http://localhost:4000.
-Changes *_data/data.yml* will be visible after a while.
+Open the URL shown in the terminal (usually `http://localhost:3000`). The app uses hash routes for deep links (for example `#home`, `#quests`, `#arsenal`, `#intel`, `#fieldlog`); legacy hashes like `#papers` or `#repos` are mapped to the same tabs.
 
-## Skins
+## Scripts
 
-There are 6 color schemes available:
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Development server with hot reload |
+| `npm run build` | Production static export to `./out` |
+| `npm run lint` | ESLint (Next.js config) |
+| `npm run fetch:repos` | Refresh `src/data/repos.json` from the GitHub API (CI / local) |
+| `npm run fetch:intel` | Refresh `src/data/intel_feed.json` from the configured release feed (CI / local) |
+| `npm run generate:narrator` | Fill missing `narratorHint` fields in repo data (CI / local) |
+| `npm run prebuild:ci` | Runs `fetch:repos`, `fetch:intel`, and `generate:narrator` in sequence |
 
-| Blue | Turquoise | Green |
-|---------|---------|---------|
-| <img src="https://online-cv.webjeda.com/assets/images/blue.jpg" width="300"/> | <img src="https://online-cv.webjeda.com/assets/images/turquoise.jpg" width="300"/> | <img src="https://online-cv.webjeda.com/assets/images/green.jpg" width="300"/> |
+For a full CI-like build locally:
 
-| Berry | Orange | Ceramic |
-|---------|---------|---------|
-| <img src="https://online-cv.webjeda.com/assets/images/berry.jpg" width="300"/> | <img src="https://online-cv.webjeda.com/assets/images/orange.jpg" width="300"/> | <img src="https://online-cv.webjeda.com/assets/images/ceramic.jpg" width="300"/> |
+```bash
+npm run prebuild:ci
+npm run build
+```
 
-## Credits
+## Deployment and CI
 
-Thanks to [Nelson Estevão](https://github.com/nelsonmestevao) for all the [contributions](https://github.com/sharu725/online-cv/commits?author=nelsonmestevao).
+GitHub Actions workflow [`.github/workflows/daily_update.yml`](.github/workflows/daily_update.yml) runs on a schedule (daily at **04:00 UTC**) and on **workflow_dispatch**. It installs dependencies, runs `prebuild:ci`, runs `next build`, then publishes `./out` to GitHub Pages (via `peaceiris/actions-gh-pages`).
 
-Thanks to [t-h-e(sfrost)](https://github.com/t-h-e) for all the [contributions](https://github.com/sharu725/online-cv/commits?author=t-h-e).
+Secrets: the fetch scripts use `GITHUB_TOKEN` in Actions when available; unauthenticated runs are subject to stricter API rate limits.
 
-Check out for more themes: [**Jekyll Themes**](http://jekyll-themes.com).
+## Project layout (short)
 
-## Star History
+- `src/app/` — Root layout (fonts, metadata) and main page (`page.tsx` tab shell + narrator wiring)
+- `src/components/` — UI sections (nav, hero, papers, repos, intel feed, field log, companion narrator, background, footer)
+- `src/data/` — `profile.ts`, `papers.ts`, and JSON files updated or merged by scripts
+- `scripts/` — Node ESM scripts for repo list, intel feed, and narrator hint generation
+- `public/` — Static assets (favicon, CV PDF path as referenced in profile, pixel sprites under `public/assets/`)
 
-[![Star History Chart](https://api.star-history.com/svg?repos=sharu725/online-cv&type=Date)](https://star-history.com/#sharu725/online-cv&Date)
+## Editing content
 
+Human-editable copy and the split between “hand-maintained” and “CI-merged” fields are documented in **`.cursor/docs/content-maintenance.md`** (Chinese, detailed). Use that guide when updating bio, papers, `narratorHint` values, or CI behavior.
+
+## Agent / automation notes
+
+For AI assistants and automation working on this repository, see **[`AGENT.md`](AGENT.md)** in the repo root.
+
+## License
+
+Project-specific license is not set in this README; refer to repository metadata or add a `LICENSE` file if you need an explicit terms file.
