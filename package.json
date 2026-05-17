@@ -14,7 +14,7 @@
     "prebuild:ci": "npm run fetch:repos && npm run fetch:intel && npm run generate:narrator"
   },
   "dependencies": {
-    "next": "^15.5.15",
+    "next": "^15.5.18",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "framer-motion": "^11.0.0"
